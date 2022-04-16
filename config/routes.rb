@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   namespace :admin do
     get 'genres/index'
     get 'genres/edit'
@@ -39,7 +40,7 @@ Rails.application.routes.draw do
     get 'addresses/edit'
   end
   namespace :public do
-    get 'homes/top'
+    root 'homes#top'
     get 'homes/about'
   end
   devise_for :customers, skip: [:passwords], controllers: {
