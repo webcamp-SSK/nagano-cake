@@ -47,7 +47,8 @@ class Public::RegistrationsController < Devise::RegistrationsController
                                                        :first_name,
                                                        :first_name_kana,
                                                        :postal_code,
-                                                       :address ])
+                                                       :address,
+                                                       :telephone_number])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
