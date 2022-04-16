@@ -1,23 +1,4 @@
 Rails.application.routes.draw do
-  namespace :admin do
-    get 'genres/index'
-    get 'genres/edit'
-  end
-  namespace :admin do
-    get 'orders/index'
-    get 'orders/show'
-  end
-  namespace :admin do
-    get 'items/index'
-    get 'items/show'
-    get 'items/edit'
-    get 'items/new'
-  end
-  namespace :admin do
-    get 'customers/index'
-    get 'customers/show'
-    get 'customers/edit'
-  end
   namespace :public do
     get 'customers/show'
     get 'customers/edit'
