@@ -40,7 +40,7 @@ Rails.application.routes.draw do
     get 'addresses/edit'
   end
   namespace :public do
-    root 'homes#top'
+    get 'homes/top'
     get 'homes/about'
   end
   devise_for :customers, skip: [:passwords], controllers: {
