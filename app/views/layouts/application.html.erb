@@ -13,11 +13,11 @@
 
   <body>
     <% if current_customer == nil && current_admin == nil %>
-    　<%= render 'layouts/guest_header' %>
+      <%= render 'layouts/guest_header' %>
     <% elsif current_customer == nil && current_admin.present? %>
-    　<%= render 'layouts/admin_header' %>
+      <%= render 'layouts/admin_header' %>
     <% else current_customer == true && current_admin == nill %>
-    　<%= render 'layouts/customer_header' %>
+      <%= render 'layouts/customer_header' %>
     <% end %>
       <p id="notice"><%= notice %></>
       <%= yield %>

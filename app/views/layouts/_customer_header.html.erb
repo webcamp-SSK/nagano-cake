@@ -10,16 +10,16 @@
       　</div>
         <ul class="navbar-nav ml-auto">
             <li>
-              <%= link_to "マイページ", "#", class: 'nav-link btn btn-outline-dark mx-3' %>
+              <%= link_to "マイページ", my_page_customers_path, class: 'nav-link btn btn-outline-dark mx-3' %>
             </li>
             <li>
-              <%= link_to "商品一覧", "#", class: 'nav-link btn btn-outline-dark mx-3' %>
+              <%= link_to "商品一覧", items_path, class: 'nav-link btn btn-outline-dark mx-3' %>
             </li>
             <li>
-              <%= link_to "カート", "#", class: 'nav-link btn btn-outline-dark mx-3' %>
+              <%= link_to "カート", cart_items_path, class: 'nav-link btn btn-outline-dark mx-3' %>
             </li>
             <li>
-              <%= button_to "ログアウト", "#", method: :delete, class: 'nav-link btn btn-outline-dark mx-3' %>
+              <%= button_to "ログアウト", destroy_customer_session_path, method: :delete, class: 'nav-link btn btn-outline-dark mx-3' %>
             </li>
           <% end %>
         </ul>
