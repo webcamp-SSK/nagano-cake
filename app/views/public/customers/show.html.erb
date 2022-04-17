@@ -1,5 +1,14 @@
-<h1>Public::Customers#show</h1>
-<p>Find me in app/views/public/customers/show.html.erb</p>
+<div class="row">
+  <div class="col-11 offset-1">
+    <h3 class="offset-3 mini-title">マイページ</h3>
+    
+    <div class="row">
+      <h2>登録情報</h2>
+      <%= link_to '編集する', ここにパス, class: "btn btn-success w-150px" %>
+    </div>
+  </div>
+</div>
+
 
 <!--確認用あとで消します！-->
 <%= link_to 'ログアウト', destroy_customer_session_path, method: :delete %>
