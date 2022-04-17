@@ -1,2 +1,39 @@
-<h1>Admin::Items#new</h1>
-<p>Find me in app/views/admin/items/new.html.erb</p>
+<h3 class="mb-5 mini-title">商品新規登録</h3>
+
+<div class="row">
+  <div class="col-6 offset-3">
+    <%= form_with model:@item, url: "/admin/items", method: :post do |f| %>
+      <div class="field form-group row">
+        <%= f.label :商品画像, class: "col-3" %>
+        <%= f.file_field :image, accept: "image/*", class:"col-9 p-0" %>
+      </div>
+      <div class="field form-group row">
+        <%= f.label :商品名, class: "col-3" %>
+        <%= f.text_field :name, placeholder: "商品名", class:"col-9" %>
+      </div>
+      <div class="field form-group row">
+        <%= f.label :商品説明, class: "col-3" %>
+        <%= f.text_area :introduction, placeholder: "ここに説明文を記述します", rows:"6", class:"col-9" %>
+      </div>
+      <div class="field form-group row">
+        <%= f.label :ジャンル, class: "col-3" %>
+        <%= f.select :genre_id, options_from_collection_for_select(Genre.all, :id, :name) %>
+      </div>
+      <div class="field form-group row">
+        <%= f.label :税抜価格, class: "col-3" %>
+        <%= f.text_field :price, placeholder: "1000", class:"col-9" %><span>円</span>
+      </div>
+      <div class="field form-group row">
+        <%= f.label :販売ステータス, class: "col-3" %>
+        <span class="col-9 p-0">
+          <%= f.radio_button :is_active, "available" %><%= f.label :is_active, "販売中",class: "mr-3" %>
+          <%= f.radio_button :is_active, "unavailable" %><%= f.label :is_active, "販売停止中" %>
+        </span>
+      </div>
+      <div class="actions form-group row">
+        <%= f.submit "新規登録", class:"btn btn-success" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-3"></div>
+</div>
