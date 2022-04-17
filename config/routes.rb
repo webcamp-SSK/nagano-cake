@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   devise_for :customers, skip: [:passwords], controllers: {
     registrations: "public/registrations",
     sessions: 'public/sessions'
@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :orders, only: [:show, :update]
     resources :order_details, only: [:update]
   end
-  
+
   scope module: :public do
     root 'homes#top'
     get 'homes/about'
@@ -33,6 +33,6 @@ Rails.application.routes.draw do
       get 'complete' => 'orders#complete'
     end
     resources :addresses, except: [:new, :show]
-    
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
