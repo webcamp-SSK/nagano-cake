@@ -15,10 +15,13 @@
         <%= f.label :商品説明, class: "col-3" %>
         <%= f.text_area :introduction, placeholder: "ここに説明文を記述します", rows:"6", class:"col-9" %>
       </div>
-      <!--ジャンルのフォーム-->
+      <div class="field form-group row">
+        <%= f.label :ジャンル, class: "col-3" %>
+        <%= f.select :genre_id, [["ケーキ",1],["プリン",2],["焼き菓子",3],["キャンディ",4]] %>
+      </div>
       <div class="field form-group row">
         <%= f.label :税抜価格, class: "col-3" %>
-        <%= f.text_field :price, placeholder: "1000", class:"col-9" %>円
+        <%= f.text_field :price, placeholder: "1000", class:"col-9" %><span>円</span>
       </div>
       <div class="field form-group row">
         <%= f.label :販売ステータス, class: "col-3" %>
