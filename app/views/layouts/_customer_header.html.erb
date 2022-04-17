@@ -1,27 +1,28 @@
 <header>
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
     <div class="container">
-      <a class="navbar-brand text-light" href="/"><span>NAGANO CAKE</span></a>
+    	<a class="navbar-brand h1" href="/">NAGANO CAKE</a>
+    	<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown" style>
       　<div class="mx-auto">ようこそ、<%= current_customer.first_name + current_customer.last_name %>さん！
       　</div>
         <ul class="navbar-nav ml-auto">
             <li>
-              <%= link_to "マイページ", "#", class: 'btn btn-outline-dark' %>
+              <%= link_to "マイページ", "#", class: 'nav-link btn btn-outline-dark mx-3' %>
             </li>
             <li>
-              <%= link_to "商品一覧", "#", class: 'btn btn-outline-dark' %>
+              <%= link_to "商品一覧", "#", class: 'nav-link btn btn-outline-dark mx-3' %>
             </li>
             <li>
-              <%= link_to "カート", "#", class: 'btn btn-outline-dark' %>
+              <%= link_to "カート", "#", class: 'nav-link btn btn-outline-dark mx-3' %>
             </li>
             <li>
-              <%= button_to "ログアウト", "#", method: :delete, class: 'btn btn-outline-dark' %>
+              <%= button_to "ログアウト", "#", method: :delete, class: 'nav-link btn btn-outline-dark mx-3' %>
             </li>
           <% end %>
         </ul>
-    </div>
-    <div class="text-right">
-      <input type="text" size="25" placeholder="Search">
     </div>
   </nav>
 </header>
