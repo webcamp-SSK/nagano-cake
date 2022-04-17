@@ -5,16 +5,16 @@
 
   <div class="field">
     <%= f.label :last_name, '(姓)' %>
-    <%= f.text_field :last_name, placeholder: '令和' %>
+    <%= f.text_field :last_name, autocomplete: "last_name", placeholder: '令和' %>
     <%= f.label :first_name, '(名)' %>
-    <%= f.text_field :first_name, placeholder: '道子' %>
+    <%= f.text_field :first_name, autocomplete: "first_name", placeholder: '道子' %>
   </div>
 
   <div class="field">
     <%= f.label :last_name_kana, '(セイ)' %>
-    <%= f.text_field :last_name_kana, placeholder: 'レイワ' %>
+    <%= f.text_field :last_name_kana, autocomplete: "last_name_kana", placeholder: 'レイワ' %>
     <%= f.label :first_name_kana, '(メイ)' %>
-    <%= f.text_field :first_name_kana, placeholder: 'ミチコ' %>
+    <%= f.text_field :first_name_kana, autocomplete: "first_name_kana", placeholder: 'ミチコ' %>
   </div>
 
   <div class="field">
@@ -24,23 +24,23 @@
 
   <div class="field">
     <%= f.label :postal_code, '郵便番号（ハイフンなし）' %>
-    <%= f.text_field :postal_code, placeholder: '0000000' %>
+    <%= f.text_field :postal_code, autocomplete: "postal_code", placeholder: '0000000' %>
   </div>
 
   <div class="field">
     <%= f.label :address, '住所' %>
-    <%= f.text_field :address, placeholder: '東京都渋谷区代々木神園町0-0' %>
+    <%= f.text_field :address, autocomplete: "address", placeholder: '東京都渋谷区代々木神園町0-0' %>
   </div>
 
   <div class="field">
     <%= f.label :telephone_number, '電話番号（ハイフンなし）' %>
-    <%= f.text_field :telephone_number, placeholder: '00000000000' %>
+    <%= f.text_field :telephone_number, autocomplete: "telephone_number", placeholder: '00000000000' %>
   </div>
 
   <div class="field">
-    <%= f.label :password, 'パスワード（６文字以上）' %>
+    <%= f.label :password, 'パスワード' %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %>文字以上)</em>
     <% end %>
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
