@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     get 'items/show'
     get 'items/edit'
     get 'items/new'
+    post 'items' => 'items#create'
   end
   namespace :admin do
     get 'customers/index'
