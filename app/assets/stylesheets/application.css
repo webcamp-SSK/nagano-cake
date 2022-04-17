@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+ .mini-title {
+  background-color: rgb(230, 230, 230);
+  display: inline-block;
+  padding:0 20px;
+}
