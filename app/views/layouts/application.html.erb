@@ -17,11 +17,9 @@
     　<%= render 'layouts/admin_header' %>
     <% else current_customer == true && current_admin == nill %>
     　<%= render 'layouts/customer_header' %>
-    <% end %
-    <main>
+    <% end %>
       <p id="notice"><%= notice %></>
       <%= yield %>
-    </main>
     <%= render 'layouts/footer' %>
   </body>
 </html>
