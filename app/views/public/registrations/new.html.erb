@@ -1,5 +1,5 @@
-<h5><span class="px-2 bg-light border font-weight-bold">新規会員登録</span></h5>
 <div class="col-9 offset-1">
+  <h5 class="mb-5 mini-title">新規会員登録</h5>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= render "public/shared/error_messages", resource: resource %>
 
@@ -14,51 +14,55 @@
     <div class="form-group row">
       <%= f.label :フリガナ, class: "col-3" %>
       <%= f.label :last_name_kana, '(セイ)', class: "col-1" %>
-      <%= f.text_field :last_name_kana, autocomplete: "last_name_kana", placeholder: 'レイワ', class: "pb-1 form-control  col-3" %>
+      <%= f.text_field :last_name_kana, autocomplete: "last_name_kana", placeholder: 'レイワ', class: "form-control  col-3" %>
       <%= f.label :first_name_kana, '(メイ)', class: "col-1" %>
-      <%= f.text_field :first_name_kana, autocomplete: "first_name_kana", placeholder: 'ミチコ', class: "pb-1 form-control  col-3" %>
+      <%= f.text_field :first_name_kana, autocomplete: "first_name_kana", placeholder: 'ミチコ', class: "form-control  col-3" %>
     </div>
 
     <div class="form-group row">
-      <%= f.label :email, 'メールアドレス' %>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'sample@example.com', class: "pb-1 form-control  col-3" %>
+      <%= f.label :email, 'メールアドレス', class: "col-4" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'sample@example.com', class: "form-control  col-3" %>
     </div>
 
     <div class="form-group row">
-      <%= f.label :postal_code, '郵便番号（ハイフンなし）' %>
-      <%= f.text_field :postal_code, autocomplete: "postal_code", placeholder: '0000000' %>
+      <%= f.label :postal_code, '郵便番号（ハイフンなし）', class: "col-4" %>
+      <%= f.text_field :postal_code, autocomplete: "postal_code", placeholder: '0000000', class: "form-control  col-3" %>
     </div>
 
     <div class="form-group row">
-      <%= f.label :address, '住所' %>
-      <%= f.text_field :address, autocomplete: "address", placeholder: '東京都渋谷区代々木神園町0-0' %>
+      <%= f.label :address, '住所', class: "col-4" %>
+      <%= f.text_field :address, autocomplete: "address", placeholder: '東京都渋谷区代々木神園町0-0', class: "form-control  col-7" %>
     </div>
 
     <div class="form-group row">
-      <%= f.label :telephone_number, '電話番号（ハイフンなし）' %>
-      <%= f.text_field :telephone_number, autocomplete: "telephone_number", placeholder: '00000000000' %>
+      <%= f.label :telephone_number, '電話番号（ハイフンなし）', class: "col-4" %>
+      <%= f.text_field :telephone_number, autocomplete: "telephone_number", placeholder: '00000000000', class: "form-control col-3" %>
     </div>
 
     <div class="form-group row">
-      <%= f.label :password, 'パスワード' %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %>文字以上)</em>
-      <% end %>
-      <%= f.password_field :password, autocomplete: "new-password" %>
+      <div class="password-form col-4">  
+        <%= f.label :password, 'パスワード' %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %>文字以上)</em>
+        <% end %>
+      </div>  
+      <%= f.password_field :password, autocomplete: "new-password", class: "form-control col-3" %>
     </div>
 
-    <div class="form-group row">
-      <%= f.label :password_confirmation, 'パスワード（確認用）' %>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <div class="form-group row mb-4">
+      <%= f.label :password_confirmation, 'パスワード（確認用）', class: "col-4" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control col-3" %>
     </div>
 
-    <div class="actions">
-      <%= f.submit "新規登録", class: "btn btn-success" %>
+    <div class="actions mb-5">
+      <%= f.submit "新規登録", class: "btn btn-success col-3 offset-3" %>
     </div>
   <% end %>
+  <div class="col-2"></div>
+  <div>
+    <h5 class="mini-title">既に登録済みの方</h5>
+  </div>
+  <div class="offset-1">
+    <p><%= render "public/shared/links" %> からログインしてください</p>
+  </div>  
 </div>
-<div class="col-2">
-<div>
-  <h5><span class="px-2 bg-light border font-weight-bold">既に登録済みの方</span></h5>
-</div>
-<p><%= render "public/shared/links" %> からログインしてください</p>
