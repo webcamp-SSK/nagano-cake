@@ -12,5 +12,10 @@ class Item < ApplicationRecord
     validates :is_active
   end
 
-  enum is_active: { available:0, unavailable:1 }
+  enum is_active: { available:true, unavailable:false }
+
+  def with_tax_price
+    (price * 1.1).floor
+  end
+
 end
