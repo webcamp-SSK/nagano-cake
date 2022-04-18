@@ -13,4 +13,5 @@ class Item < ApplicationRecord
   end
 
   enum is_active: { available:0, unavailable:1 }
+
 end
