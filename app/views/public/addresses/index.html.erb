@@ -1,14 +1,22 @@
 <h3 class="my-3 offset-2 mini-title">配達先登録 ／ 一覧</h3>
 <div class="col-12 mb-5">
-  <%= form_with model: @address, method: :post do |f| %>
-    <%= render 'public/addresses/address_form', f: f %>
-  <% end %>
+  <%= render 'public/addresses/address_form', address: @address %>
 </div>
 
-<div >
-<% if @addresses.present? %>
-  <% @addresses.each do |address| %>
-    <%= render 'public/addresses/address_index', address: address %>
+<div>
+<table class="table table-bordered">
+  <thead　class="thead-dark">
+    <tr>
+      <th>郵便番号</th>
+      <th>住所</th>
+      <th>宛名</th>
+      <th></th>
+    </tr>
+  </thead>
+  <% if @addresses.present? %>
+    <% @addresses.each do |address| %>
+      <%= render 'public/addresses/address_index', address: address %>
+    <% end %>
   <% end %>
-<% end %>
+</table>
 </div>
