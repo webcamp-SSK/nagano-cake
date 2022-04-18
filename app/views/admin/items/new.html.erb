@@ -26,8 +26,8 @@
       <div class="field form-group row">
         <%= f.label :販売ステータス, class: "col-3" %>
         <span class="col-9 p-0">
-          <%= f.radio_button :is_active, Item.is_actives.key(0) %><%= f.label :is_active, Item.is_actives_i18n[:available],class: "mr-3" %>
-          <%= f.radio_button :is_active, Item.is_actives.key(1) %><%= f.label :is_active, Item.is_actives_i18n[:unavailable] %>
+          <%= f.radio_button :is_active, Item.is_actives.key(true) %><%= f.label :is_active, Item.is_actives_i18n[:available],class: "mr-3" %>
+          <%= f.radio_button :is_active, Item.is_actives.key(false) %><%= f.label :is_active, Item.is_actives_i18n[:unavailable] %>
         </span>
       </div>
       <div class="actions form-group row">
