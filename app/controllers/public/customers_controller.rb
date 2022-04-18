@@ -12,5 +12,9 @@ class Public::CustomersController < ApplicationController
 
   def destroy
   end
-
+  
+  def unsubscribe
+    
+  end
+  
 end
