@@ -1,12 +1,14 @@
 <h3 class="my-3 offset-2 mini-title">配達先登録 ／ 一覧</h3>
-<div class="col-9">
+<div class="col-12 mb-5">
   <%= form_with model: @address, method: :post do |f| %>
     <%= render 'public/addresses/address_form', f: f %>
   <% end %>
 </div>
 
+<div >
 <% if @addresses.present? %>
   <%= @addresses.each do |address| %>
     <%= render 'public/addresses/address_index', address: address %>
   <% end %>
 <% end %>
+</div>
