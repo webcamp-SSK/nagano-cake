@@ -1,5 +1,5 @@
-<%= form_with model: address, method: :post do |f| %>
-  <%= render 'layouts/errors', obj: address %>
+
+  <%= render 'layouts/errors', obj: obj %>
   <div class="form-group row">
     <%= f.label :postal_code, '郵便番号（ハイフンなし）', class: "col-3" %>
     <%= f.text_field :postal_code, autocomplete: "postal_code", placeholder: '0000000', class: "form-control  col-3" %>
@@ -13,6 +13,5 @@
   <div class="form-group row">
     <%= f.label :name, '宛名', class: "col-3" %>
     <%= f.text_field :name, autocomplete: "name", placeholder: '令和道子', class: "form-control col-3" %>
-    <%= address.postal_code.blank? ? (f.submit "新規登録", class: "btn btn-success col-2 offset-2") : (f.submit "変更内容を保存", class: "btn btn-success col-2 offset-2") %>
+    <%= address.postal_code.blank? ? (f.submit "新規登録", class: "btn btn-success col-2 offset-2") : (f.submit "変更内容を保存", method: :patch, class: "btn btn-success col-2 offset-2") %>
   </div>
-<% end %>

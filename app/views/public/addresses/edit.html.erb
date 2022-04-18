@@ -1,4 +1,6 @@
-<h3 class="my-3 offset-2 mini-title">配達先登録 ／ 一覧</h3>
+<h3 class="mt-3 mb-5 offset-2 mini-title">配達先編集</h3>
 <div class="col-11 offset-1 mb-5">
-  <%= render 'public/addresses/address_form', address: @address %>
+  <%= form_with model: @address, method: :patch do |f| %>
+    <%= render 'public/addresses/address_form', address: @address, f: f, obj: @address %>
+  <% end %>
 </div>
