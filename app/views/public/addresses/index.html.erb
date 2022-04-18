@@ -4,11 +4,10 @@
   <%= render 'public/addresses/address_form', f: f %>
 <% end %>
 
-<%# if @addresses.count == 1 %>
-  <%#= @addresses.postal_code %>
-<%# end %>
-<% if false%>
+
+
+<% if @addresses.present? %>
   <%= @addresses.each do |address| %>
     <%= address.postal_code %>
   <% end %>
-<% end %>
+<% end %>  

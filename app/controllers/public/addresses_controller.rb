@@ -2,7 +2,7 @@ class Public::AddressesController < ApplicationController
   before_action :authenticate_customer!
 
   def index
-    @addresses = current_customer.address
+    @addresses = current_customer.addresses
     @address = Address.new
     
   end
@@ -11,7 +11,7 @@ class Public::AddressesController < ApplicationController
   end
 
   def create
-    @address = current_customer.address.new(address_params)
+    @address = current_customer.addresses.new(address_params)
     @address.save
   end
 
