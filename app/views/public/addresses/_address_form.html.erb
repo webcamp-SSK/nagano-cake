@@ -13,6 +13,6 @@
   <div class="form-group row">
     <%= f.label :name, '宛名', class: "col-3" %>
     <%= f.text_field :name, autocomplete: "name", placeholder: '令和道子', class: "form-control col-3" %>
-    <%= f.submit "新規登録", class: "btn btn-success col-2 offset-2" %>
+    <%= address.postal_code.blank? ? (f.submit "新規登録", class: "btn btn-success col-2 offset-2") : (f.submit "変更内容を保存", class: "btn btn-success col-2 offset-2") %>
   </div>
 <% end %>
