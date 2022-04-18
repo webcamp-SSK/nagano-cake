@@ -7,7 +7,7 @@
 
 <div >
 <% if @addresses.present? %>
-  <%= @addresses.each do |address| %>
+  <% @addresses.each do |address| %>
     <%= render 'public/addresses/address_index', address: address %>
   <% end %>
 <% end %>
