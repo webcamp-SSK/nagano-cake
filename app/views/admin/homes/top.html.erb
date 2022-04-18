@@ -1,7 +1,40 @@
-<h1>Admin::Homes#top</h1>
-<p>Find me in app/views/admin/homes/top.html.erb</p>
+<div class="p-5">
+  <h3 class="ml-5 mini-title">商品一覧</h3><%= link_to "+", new_admin_item_path,style:"font-size:40px;" %>
+</div>
 
-<!--あとで消します-->
-<%= link_to(destroy_admin_session_path,method: :delete) do %>
-  <i class="fas fa-sign-out-alt"></i> Log out
-<% end %>
+<div class="row mx-5">
+  <table class="table mx-5 table-borderless">
+    <thead class="thead-light">
+      <tr>
+        <th>商品ID</th>
+        <th colspan="4">商品名</th>
+        <th>税込価格</th>
+        <th colspan="4">ジャンル</th>
+        <th>ステータス</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @items.each do |item| %>
+        <tr>
+          <td>
+            <%= item.id %>
+          </td>
+          <td colspan="4">
+            <%= link_to item.name, admin_item_path(item) %>
+          </td>
+          <td>
+            <%= item.price.to_s(:delimited) %>
+          </td>
+          <td colspan="4">
+            <%= item.genre.name %>
+          </td>
+          <td>
+            <%= item.is_active_i18n %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= paginate @items %>
