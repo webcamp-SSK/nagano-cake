@@ -6,7 +6,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown" style>
-      　<div class="mx-auto">ようこそ、<%= current_customer.first_name + current_customer.last_name %>さん！
+      　<div class="mx-auto">ようこそ、<%= current_customer.first_name + "  " + current_customer.last_name %>さん！
       　</div>
         <ul class="navbar-nav ml-auto">
             <li>
@@ -21,7 +21,6 @@
             <li>
               <%= button_to "ログアウト", destroy_customer_session_path, method: :delete, class: 'nav-link btn btn-outline-dark mx-3' %>
             </li>
-          <% end %>
         </ul>
     </div>
   </nav>
