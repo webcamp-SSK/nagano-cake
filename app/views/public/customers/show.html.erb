@@ -1,14 +1,49 @@
 <div class="row">
   <div class="col-11 offset-1">
-    <h3 class="offset-3 mini-title">マイページ</h3>
+    <h3 class="my-3 offset-3 mini-title">マイページ</h3>
 
-    <div class="row">
-      <h2>登録情報</h2>
-      
-    </div>
+    <table class="table table-borderless">
+      <tr class="address-index-button">
+        <th class="col-2"><h3><b>登録情報</b></h3></th>
+        <td><%= link_to '編集する', "#", class: "btn btn-success col-2" %></td>
+      </tr>
+    </table>
+
+    <table class="table table-bordered col-9 ml-3 mb-4">
+      <tbody>
+        <tr>
+          <td class="col-4 table-active">氏名</td>
+          <td><%= current_customer.last_name %>　<%= current_customer.first_name %></td>
+        </tr>
+        <tr>
+          <td class="table-active">カナ</td>
+          <td><%= current_customer.last_name_kana %>　<%= current_customer.first_name_kana %></td>
+        <tr>
+          <td class="table-active">郵便番号</td>
+          <td><%= current_customer.postal_code %></td>
+        </tr>
+        <tr>
+          <td class="table-active">住所</td>
+          <td><%= current_customer.address %></td>
+        </tr>        <tr>
+          <td class="table-active">電話番号</td>
+          <td><%= current_customer.telephone_number %></td>
+        </tr>        <tr>
+          <td class="table-active">メールアドレス</td>
+          <td><%= current_customer.email %></td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="table table-borderless ml-0 mb-5">
+      <tr class="address-index-button">
+        <th class="col-2"><h3><b>配達先</b></h3></th>
+        <td><%= link_to '一覧を見る', addresses_path, class: "btn btn-primary col-3" %></td>
+      </tr>
+      <tr class="order-index-button">
+        <th class="col-2"><h3><b>注文履歴</b></h3></th>
+        <td><%= link_to '一覧を見る', orders_path, class: "btn btn-primary col-3" %></td>
+      </tr>
+    </table>
+
   </div>
 </div>
-
-
-<!--確認用あとで消します！-->
-<%= link_to 'ログアウト', destroy_customer_session_path, method: :delete %>
