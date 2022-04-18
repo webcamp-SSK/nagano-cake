@@ -1,29 +1,26 @@
 <div class="container">
   <div class="row" >
-    <div class="main-box">
-      <div class="box">
-        <div id="theTarget">
-          <div class="image1"></div>
+    <div class="col-12">
+      <div class= "row d-flex justify-content-center">
+        <div class= "card border border-0" >
+          <%= image_tag 'eclair-g1f10a0957_640.jpeg', class:"card-img" %>
+            <div class="card-img-overlay d-flex justify-content-center align-items-center" >
+              <p class="card-text" >
+                ようこそ、ながのCAKEへ!<br>
+                このサイトは、ケーキ販売のECサイトになります。<br>
+                会員でない方も商品の閲覧はできますが、<br>
+                購入には会員登録が必要になります。
+              </p>
+            </div>
         </div>
       </div>
-
-      <div class="box-text">
-        <p>
-          ようこそ、ながのCAKEへ!<br>
-          このサイトは、ケーキ販売のECサイトになります。<br>
-          会員でない方も商品の閲覧はできますが、<br>
-          購入には会員登録が必要になります。
-        </p>
-      </div>
     </div>
-  </div>
+    <div class="row">
+      <h4 class ="ml-5 font-weight-bold" >新着商品</h4>
+    </div>
 
-  <div class="row">
-    <div class="col-md-9 co-sm-9 offset-md-3 offset-sm-3">
-      <h4 class="bg-light text-center col-md-3"><strong>新着商品</strong></h4>
-      <div class="offset-md-9 mt-3">
-        <%= link_to "全ての商品を見る", "#" %>
-      </div>
+    <div class = "row d-flex justify-content-end">
+      <%= link_to "全ての商品を見る", items_path %>
     </div>
   </div>
 </div>
