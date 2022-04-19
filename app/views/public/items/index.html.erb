@@ -11,7 +11,7 @@
         <% @items.each do |item| %>
           <div class="item-box card border-0 w-25 p-3">
             <%= link_to item_path(item) do %>
-              <%= image_tag @item_image,size: "100x100" %>
+              <%= image_tag item.image, size: "100x100" %>
               <p class="card-title text-dark"><%= item.name %></p>
             <% end %>
             <p>￥<%= item.price.to_s(:delimited) %></p>
