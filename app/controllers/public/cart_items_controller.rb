@@ -4,16 +4,25 @@ class Public::CartItemsController < ApplicationController
   def index
     @cart_items = current_customer.cart_items
     @total_price = @cart_items.inject(0) { |sum, item| sum + item.subtotal }
+    @order = Order.new
   end
 
   def create
-    @cart_item = CartItem.new(cart_item_params)
-    @cart_item.customer_id = current_customer.id
-    if @cart_item.save
+    @item = Item.find(params[:cart_item][:item_id])
+    if current_customer.cart_items.find_by(item_id: @item.id)
+      @new_cart_item = CartItem.new(cart_item_params)
+      @cart_item = current_customer.cart_items.find_by(item_id: @item.id)
+      @cart_item.amount += @new_cart_item.amount
+      @cart_item.save
       redirect_to cart_items_path
     else
-      @item = Item.find(params[:item_id])
-      render template: 'public/items/show'
+      @cart_item = CartItem.new(cart_item_params)
+      @cart_item.customer_id = current_customer.id
+      if @cart_item.save
+        redirect_to cart_items_path
+      else
+        render template: 'public/items/show'
+      end
     end
   end
 
