@@ -20,9 +20,14 @@ class Public::CartItemsController < ApplicationController
   end
 
   def destroy
+    cart_item = CartItem.find(params[:id])
+    cart_item.destroy
+    redirect_to request.referer
   end
 
-  def all_destroy
+  def destroy_all
+    current_customer.cart_items.destroy_all
+    redirect_to request.referer
   end
 
   private
