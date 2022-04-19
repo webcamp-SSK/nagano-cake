@@ -13,7 +13,7 @@
       <%= f.label :payment_method, Order.payment_methods_i18n[:transfer]%>
     </div>
     <h4>お届け先</h4>
-    <div class="field form-group">
+    <div class="field form-group pl-4">
       <%= f.radio_button :select_address, 0 %><%= f.label :ご自身の住所 %>
       <div class="pl-4 mb-2">
         <%= current_customer.customer_address_display %><br>
@@ -44,7 +44,7 @@
       </div>
     </div>
     <div class="actions form-group row">
-      <%= f.submit "確認画面へ進む", class:"btn btn-success" %>
+      <%= f.submit "確認画面へ進む", class:"btn btn-primary" %>
     </div>
   <% end %>
 </div>
