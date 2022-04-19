@@ -1,14 +1,14 @@
 <div class='container'>
   <div class="row">
-    <div class="col-3 my-3">
+    <div class="col-3">
       <%= render 'genre_search', genres: @genres %>
     </div>
 
-    <div class="col-9 my-3">
+    <div class="col-9 my-5 mx-auto">
       <div class="row">
         <div class='col-5'>
           <div class="item-show">
-            <%= image_tag @item.image, size: "300x200" %>
+            <%= image_tag @item.image, size: "400x300" %>
           </div>
         </div>
         <div class="col-6 offset-1 align-items-end flex-column" style="height: 200px;">
@@ -35,7 +35,7 @@
                   <%= f.select :amount, [1, 2, 3, 4, 5, 6, 7, 8, 9,  10], include_blank: '個数選択'%>
                 </div>
               </div>
-              <div class="form-group ml-3">
+              <div class="form-group">
                 <%= f.submit "カートに入れる", class: 'btn btn-sm btn-success' %>
               </div>
             </div>
