@@ -9,7 +9,8 @@ class Public::AddressesController < ApplicationController
 
 
   def create
-    @address = current_customer.addresses.new(address_params)
+    @address = Address.new(address_params)
+    @address.customer_id = current_customer.id
     if @address.save
       redirect_to request.referer
     else
