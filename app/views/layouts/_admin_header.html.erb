@@ -1,30 +1,38 @@
 <header>
   <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
     <div class="container">
-    	<a class="navbar-brand h1" href="/">Nagano Cake</a>
+    	<a class="navbar-brand h1" href="/" style="font-size: 36px">Nagano Cake</a>
     	<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown" style>
-        <ul class="navbar-nav ml-auto">
-          <% if admin_signed_in? %>
-            <li>
-              <%= link_to "商品一覧", admin_items_path, class: 'nav-link btn btn-secondary mx-3' %>
-            </li>
-            <li>
-              <%= link_to "会員一覧", admin_customers_path, class: 'nav-link btn btn-secondary mx-3' %>
-            </li>
-            <li>
-              <%= link_to "注文履歴一覧", admin_root_path, class: 'nav-link btn btn-secondary mx-3' %>
-            </li>
-            <li>
-              <%= link_to "ジャンル一覧", admin_genres_path, class: 'nav-link btn btn-secondary mx-3' %>
-            </li>
-            <li>
-              <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'nav-link btn btn-secondary mx-3' %>
-            </li>
-          <% end %>
-        </ul>
+        <div class="mx-auto"></div>
+        <div>
+          <ul class="navbar-nav ml-auto d-block">
+            <% if admin_signed_in? %>
+              <li class="d-inline-block">
+           <%= link_to "商品一覧", admin_items_path, class: 'nav-link btn btn-secondary mx-2' %>
+              </li>
+              <li class="d-inline-block">
+           <%= link_to "会員一覧", admin_customers_path, class: 'nav-link btn btn-secondary mx-2' %>
+              </li>
+              <li class="d-inline-block">
+           <%= link_to "注文履歴一覧", admin_root_path, class: 'nav-link btn btn-secondary mx-2' %>
+              </li>
+              <li class="d-inline-block">
+           <%= link_to "ジャンル一覧", admin_genres_path, class: 'nav-link btn btn-secondary mx-2' %>
+              </li>
+              <li class="d-inline-block">
+           <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'nav-link btn btn-secondary mx-2' %>
+              </li>
+            <% end %>
+          </ul>
+          <form class="form-inline d-block text-right">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+          </form>
+        </div>
+      </div>
     </div>
   </nav>
 </header>
