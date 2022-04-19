@@ -4,3 +4,8 @@ ja:
       is_active:
         available: "販売中"
         unavailable: "販売停止中"
+
+    order:
+        payment_method:
+          credit_card: "クレジットカード"
+          transfer: "銀行振込"
