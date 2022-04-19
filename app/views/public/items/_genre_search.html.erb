@@ -1,8 +1,10 @@
-<div class='card'>
-  <h6 class="card-header bg-white text-center font-weight-bold">ジャンル検索</h6>
+<div class='card mt-5'>
+  <h6 class="card-header bg-white text-center font-weight-bold" style="font-size: 15px">ジャンル検索</h6>
   <div class=" h-75 card-body">
     <% genres.each do |genre| %>
-      <%= link_to genre.name, "#", class: "text-dark" %><br>
+      <div class="my-4" style="font-size: 15px">
+        <%= link_to genre.name, "#", class: "text-dark" %><br>
+      </div>
     <% end %>
   </div>
 </div>
