@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  scope module: :public do
+    resource :customers, only: [:edit]
+  end
   devise_for :customers, skip: [:passwords], controllers: {
     registrations: "public/registrations",
     sessions: 'public/sessions'
@@ -18,7 +21,7 @@ Rails.application.routes.draw do
   scope module: :public do
     root 'homes#top'
     get 'homes/about'
-    resource :customers, only: [:edit, :update] do
+    resource :customers, only: [:update] do
       get 'my_page' => 'customers#show'
       get 'unsubscribe' => 'customers#unsubscribe'
       patch 'withdraw' => 'customers#withdraw'
