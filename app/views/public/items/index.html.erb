@@ -1,12 +1,15 @@
 <div class="container">
   <div class="row">
-    <div class="col-3">
+    <div class="col-3 my-3">
       <%= render 'genre_search', genres: @genres %>
     </div>
 
-    <div class="col-md-9 col-sm-9">
-      <h3 class="bg-light text-center col-md-2 col-sm-2 my-3">商品一覧</h3>
-      <div><span>（全<%= Item.where(is_active: 1).count %>件）</span></div>
+
+    <div class="col-9">
+      <div class="row">
+        <h3 class="bg-light text-center col-4 my-3 ml-3">商品一覧</h3>
+          <div class="my-3 d-flex align-items-end"><span>（全<%= Item.where(is_active: 1).count %>件）</span></div>
+      </div>
       <div class="row">
         <% @items.each do |item| %>
           <div class="col-md-3 col-sm-3 my-3">
