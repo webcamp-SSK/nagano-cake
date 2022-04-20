@@ -1,2 +1,33 @@
-<h1>Admin::Orders#show</h1>
-<p>Find me in app/views/admin/orders/show.html.erb</p>
+<div class="row">
+<div class="col">
+  <strong>注文情報</strong>
+  <table class="table table-borderless">
+    <tbody>
+      <tr>
+        <th>購入者</th>
+        <td><%= @order.created_at.strftime('%Y/%m/%d') %></td>
+      </tr>
+      <tr>
+        <th>注文日</th>
+        <td></td>
+      </tr>
+      <tr>
+        <td>配送先</td>
+        <td>
+          <p><%= @order.postal_code %><br>
+            <%= @order.address %><br>
+            <%= @order.name %>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td>支払い方法</td>
+        <td><%= @order.payment_method %></td>
+      </tr>
+      <tr>
+        <td>ステータス</td>
+        <td><%= @order.status %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
