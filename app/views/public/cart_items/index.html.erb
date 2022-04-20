@@ -3,7 +3,7 @@
   <%= link_to 'カートを空にする', cart_item_destroy_all_path(current_customer.cart_items), method: :delete, class: "btn btn-danger offset-3" %>
 </div>
 
-  <div class="col-11 mx-5 my-3">
+  <div class="col-10 mx-5 my-3">
     <% if @cart_items.present? %>
        <%= render 'cart_items_index', cart_items: @cart_items %>
     <% else %>
@@ -12,7 +12,7 @@
   </div>
 <div class="row offset-1 mb-4">
   <div><%= link_to '買い物を続ける', items_path, class: "btn btn-primary" %></div>
-  <div class="col-4 offset-6">
+  <div class="col-4 offset-5">
     <table class="table table-bordered">
       <tr>
         <td class="table-active">合計金額</td>
