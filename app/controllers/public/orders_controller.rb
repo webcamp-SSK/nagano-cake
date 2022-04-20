@@ -6,6 +6,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def show
+    @order = Order.find(params[:id])
   end
 
   def new
@@ -25,7 +26,7 @@ class Public::OrdersController < ApplicationController
                                            )
       end
       @cart_items.destroy_all
-      redirect_to orders_complete_path
+      redirect_to complete_orders_path
     else
       render "confirm"
     end
