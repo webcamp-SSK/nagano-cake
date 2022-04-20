@@ -68,9 +68,9 @@
           <% @order.order_details.all.each do |order_detail| %>
             <tr>
               <td><%= order_detail.item.name %></td>
-              <td>¥<%= (order_detail.item.add_tax_price).to_s(:delimited) %>－</td>
+              <td>¥<%= (order_detail.item.price).to_s(:delimited) %>－</td>
               <td><%= order_detail.amount %>　個</td>
-              <td>¥<%= (order_detail.item.add_tax_price*order_detail.amount).to_s(:delimited) %>－</td>
+              <td>¥<%= (order_detail.item.price*order_detail.amount).to_s(:delimited) %>－</td>
             </tr>
           <% end %>
         </tbody>
