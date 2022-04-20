@@ -16,16 +16,16 @@
       <% @orders.each do |order| %>
         <tr>
           <td>
-            <%= order.created_at.strftime('%Y/%m/%d　%H:%M') %>　リンク
+            <%= link_to order.created_at.strftime('%Y/%m/%d　%H:%M'), admin_order_path(order.id), class:"text-dark" %>
           </td>
           <td>
             <%= order.customer.last_name + order.customer.first_name %>
           </td>
           <td>
-            <%= order.order_details.count %> 修正要
+            <%= order.order_details.inject(0) { |sum, order_detail| sum + order_detail.amount } %>
           </td>
           <td>
-            <%= order.status %>
+            <%= order.status_i18n %>
           </td>
         </tr>
       <% end %>
