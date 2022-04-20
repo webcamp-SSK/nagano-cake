@@ -3,7 +3,7 @@
 </div>
 
 <div class="row mx-5">
-  <table class="table mx-5 table-borderless">
+  <table class="table mx-5 table border-bottom">
     <thead class="thead-light">
       <tr>
         <th>購入日時</th>
@@ -15,16 +15,16 @@
     <tbody>
       <% @orders.each do |order| %>
         <tr>
-          <td>
-            <%= link_to order.created_at.strftime('%Y/%m/%d　%H:%M'), admin_order_path(order.id), class:"text-dark" %>
+          <td class="py-3">
+            <%= link_to order.created_at.strftime('%Y/%m/%d　%H:%M:%S'), admin_order_path(order.id), class:"text-dark" %>
           </td>
-          <td>
+          <td class="py-3">
             <%= order.customer.last_name + order.customer.first_name %>
           </td>
-          <td>
+          <td  class="py-3">
             <%= order.order_details.inject(0) { |sum, order_detail| sum + order_detail.amount } %>
           </td>
-          <td>
+          <td  class="py-3">
             <%= order.status_i18n %>
           </td>
         </tr>
@@ -33,3 +33,4 @@
   </table>
 </div>
 
+<%= paginate @orders %>

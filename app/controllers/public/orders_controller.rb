@@ -26,7 +26,7 @@ class Public::OrdersController < ApplicationController
                                            )
       end
       @cart_items.destroy_all
-      redirect_to complete_orders_path
+      redirect_to orders_complete_path
     else
       render "confirm"
     end
