@@ -34,9 +34,8 @@ Rails.application.routes.draw do
       post '/confirm' => 'orders#confirm'
       get '/complete' => 'orders#complete'
     end
-
     resources :orders, only: [:index, :show]
-
+    
     resources :addresses, except: [:new, :show]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
