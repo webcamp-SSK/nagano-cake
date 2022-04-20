@@ -26,7 +26,7 @@ class Public::OrdersController < ApplicationController
                                            )
       end
       @cart_items.destroy_all
-      redirect_to complete_orders_path
+      redirect_to orders_complete_path
     else
       render "confirm"
     end
@@ -40,14 +40,22 @@ class Public::OrdersController < ApplicationController
       @order.address = current_customer.address
       @order.name = current_customer.last_name + current_customer.first_name
     elsif params[:order][:select_address] == "1"
-      @address = Address.find(params[:order][:address_id])
-      @order.postal_code = @address.postal_code
-      @order.address = @address.address
-      @order.name = @address.name
+      unless current_customer.addresses.exists? #配送先登録がない場合
+        render "new"
+      else
+        @address = Address.find(params[:order][:address_id])
+        @order.postal_code = @address.postal_code
+        @order.address = @address.address
+        @order.name = @address.name
+      end
     elsif params[:order][:select_address] == "2"
-      @order.postal_code = params[:order][:postal_code]
-      @order.address = params[:order][:address]
-      @order.name = params[:order][:name]
+      if ( params[:order][:postal_code] || params[:order][:address] || params[:order][:name] ).empty?
+        render "new"
+      else
+        @order.postal_code = params[:order][:postal_code]
+        @order.address = params[:order][:address]
+        @order.name = params[:order][:name]
+      end
     end
 
     @cart_items = current_customer.cart_items
