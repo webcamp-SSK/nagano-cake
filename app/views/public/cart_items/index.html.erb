@@ -1,21 +1,17 @@
 <div class="row col-11 mt-5 mb-2">
   <h3 class="ml-5 mini-title">ショッピングカート</h3>
-  <%= link_to 'カートを空にする', cart_item_destroy_all_path(current_customer.cart_items), method: :delete, class: "btn btn-danger offset-3" %>
+  <%= link_to 'カートを空にする', cart_item_destroy_all_path(current_customer.cart_items), method: :delete, class: "btn btn-danger offset-8" %>
 </div>
 
-  <div class="col-10 mx-5 my-3">
-    <% if @cart_items.present? %>
-       <%= render 'cart_items_index', cart_items: @cart_items %>
-    <% else %>
-      <div>商品はまだありません</div>
-    <% end %>
+  <div class="col-9 offset-1">
+    <%= render 'cart_items_index', cart_items: @cart_items %>
   </div>
 <div class="row offset-1 mb-4">
   <div><%= link_to '買い物を続ける', root_path, class: "btn btn-primary" %></div>
   <div class="col-4 offset-5">
     <table class="table table-bordered">
       <tr>
-        <td class="table-active">合計金額</td>
+        <th class="table-active">合計金額</th>
         <td><%= @total_price.to_s(:delimited) %></td>
       </tr>
     </table>
