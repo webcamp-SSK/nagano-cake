@@ -1,37 +1,41 @@
-<h3 class="mb-5 mini-title">商品新規登録</h3>
+<div class="p-5">
+  <h3 class="mb-5 ml-5 mini-title">商品新規登録</h3>
+</div>
 
-<div class="row">
+<div class="row px-5 mx-5">
   <div class="col-6 offset-3">
     <%= form_with model:@item, url: "/admin/items", method: :post do |f| %>
       <div class="field form-group row">
         <%= f.label :商品画像, class: "col-3" %>
-        <%= f.file_field :image, accept: "image/*", class:"col-9 p-0" %>
+        <%= f.file_field :image, accept: "image/*", class:"col-8 p-0" %>
       </div>
       <div class="field form-group row">
         <%= f.label :商品名, class: "col-3" %>
-        <%= f.text_field :name, placeholder: "商品名", class:"col-9" %>
+        <%= f.text_field :name, placeholder: "商品名", class:"col-8" %>
       </div>
       <div class="field form-group row">
         <%= f.label :商品説明, class: "col-3" %>
-        <%= f.text_area :introduction, placeholder: "ここに説明文を記述します", rows:"6", class:"col-9" %>
+        <%= f.text_area :introduction, placeholder: "ここに説明文を記述します", rows:"6", class:"col-8" %>
       </div>
       <div class="field form-group row">
         <%= f.label :ジャンル, class: "col-3" %>
-        <%= f.select :genre_id, options_from_collection_for_select(Genre.all, :id, :name) %>
+        <%= f.select :genre_id, options_from_collection_for_select(Genre.all, :id, :name), { prompt: '選択してください' } %>
       </div>
       <div class="field form-group row">
         <%= f.label :税抜価格, class: "col-3" %>
-        <%= f.text_field :price, placeholder: "1000", class:"col-9" %><span>円</span>
+        <%= f.text_field :price, placeholder: "1000", class:"col-8" %> 円
       </div>
       <div class="field form-group row">
         <%= f.label :販売ステータス, class: "col-3" %>
-        <span class="col-9 p-0">
+        <span class="col-8 p-0">
           <%= f.radio_button :is_active, Item.is_actives.key(true) %><%= f.label :is_active, Item.is_actives_i18n[:available],class: "mr-3" %>
           <%= f.radio_button :is_active, Item.is_actives.key(false) %><%= f.label :is_active, Item.is_actives_i18n[:unavailable] %>
         </span>
       </div>
-      <div class="actions form-group row">
-        <%= f.submit "新規登録", class:"btn btn-success" %>
+      <div class="actions form-group row mt-5">
+        <div class="col-4 offset-4">
+          <%= f.submit "新規登録", class:"btn btn-success btn-lg px-5" %>
+        </div>
       </div>
     <% end %>
   </div>
