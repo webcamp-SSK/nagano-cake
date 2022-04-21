@@ -31,7 +31,9 @@
             <td><%= order.total_payment.to_s(:delimited) %>円</td>
             <td><%= order.status_i18n %></td>
             <td>
-              <div class="d-flex justify-content-center"><%= link_to '表示する', order_path(order), class: "btn btn-sm btn-primary mt-3" %></div>
+              <div class="d-flex justify-content-center">
+                <%= link_to '表示する', order_path(order), class: "btn btn-sm btn-primary mt-3" %>
+              </div>
             </td>
           </tr>
         <% end %>
