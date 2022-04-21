@@ -32,8 +32,10 @@
           <%= f.radio_button :is_active, Item.is_actives.key(false) %><%= f.label :is_active, Item.is_actives_i18n[:unavailable] %>
         </span>
       </div>
-      <div class="actions form-group row">
-        <%= f.submit "新規登録", class:"btn btn-success col-4 offset-4" %>
+      <div class="actions form-group row mt-5">
+        <div class="col-4 offset-4">
+          <%= f.submit "新規登録", class:"btn btn-success btn-lg px-5" %>
+        </div>
       </div>
     <% end %>
   </div>
