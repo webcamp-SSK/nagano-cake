@@ -15,7 +15,7 @@ class Admin::GenresController < ApplicationController
     if @genre.save
       redirect_to request.referer
     else
-      render "index"
+      redirect_to request.referer
     end
   end
 
