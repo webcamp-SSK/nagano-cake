@@ -2,35 +2,37 @@
   <h3 class="ml-5 mini-title">注文履歴一覧</h3>
 </div>
 
-<div class="row mx-5">
-  <table class="table mx-5 table border-bottom">
-    <thead class="thead-light">
-      <tr>
-        <th>購入日時</th>
-        <th>購入者</th>
-        <th>注文個数</th>
-        <th>注文ステータス</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @orders.each do |order| %>
+<div class="px-5">
+  <div class="row mx-5">
+    <table class="table mx-5 table border-bottom">
+      <thead class="thead-light">
         <tr>
-          <td class="py-3">
-            <%= link_to order.created_at.strftime('%Y/%m/%d　%H:%M:%S'), admin_order_path(order.id), class:"text-dark" %>
-          </td>
-          <td class="py-3">
-            <%= order.customer.last_name + order.customer.first_name %>
-          </td>
-          <td  class="py-3">
-            <%= order.order_details.inject(0) { |sum, order_detail| sum + order_detail.amount } %>
-          </td>
-          <td  class="py-3">
-            <%= order.status_i18n %>
-          </td>
+          <th style="width: 25%">購入日時</th>
+          <th style="width: 25%">購入者</th>
+          <th style="width: 25%">注文個数</th>
+          <th style="width: 25%">注文ステータス</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% @orders.each do |order| %>
+          <tr>
+            <td class="py-4" style="width: 25%">
+              <u><%= link_to order.created_at.strftime('%Y/%m/%d　%H:%M:%S'), admin_order_path(order.id), class:"text-dark" %></u>
+            </td>
+            <td class="py-4" style="width: 25%">
+              <%= order.customer.last_name + order.customer.first_name %>
+            </td>
+            <td  class="py-4" style="width: 25%">
+              <%= order.order_details.inject(0) { |sum, order_detail| sum + order_detail.amount } %>
+            </td>
+            <td  class="py-4" style="width: 25%">
+              <%= order.status_i18n %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 <%= paginate @orders %>
