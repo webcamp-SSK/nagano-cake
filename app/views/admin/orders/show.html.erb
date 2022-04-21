@@ -55,7 +55,7 @@
               <td><%= order_detail.amount %>　個</td>
               <td><%= (order_detail.item.price*order_detail.amount).to_s(:delimited) %></td>
               <td>
-                <%= form_with model: @order_detail, url: admin_order_detail_path(@order), method: :patch do |f| %>
+                <%= form_with model: order_detail, url: admin_order_detail_path(order_detail), method: :patch do |f| %>
                   <%= f.select :making_status, OrderDetail.making_statuses.keys.map { |k| [t("enums.order_detail.making_status.#{k}"), k] } %>
                   <%= f.submit '更新', class: "btn btn-success" %>
                 <% end %>
@@ -67,6 +67,19 @@
     </div>
   </div>
 </div>
-
+<table class="table table-borderless">
+        <tr>
+          <th>商品合計</td>
+          <td>¥<%= (@order.total_payment - @order.shipping_cost).to_s(:delimited) %>－</td>
+        </tr>
+        <tr>
+          <td class="table-active">送料</td>
+          <td>¥<%= @order.shipping_cost.to_s(:delimited) %>－</td>
+        </tr>
+        <tr>
+          <td class="table-active"><strong>ご請求額</strong></td>
+          <td>¥<%= @order.total_payment.to_s(:delimited) %>－</td>
+        </tr>
+      </table>
   </div>
 </div>
