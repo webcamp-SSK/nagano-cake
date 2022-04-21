@@ -26,9 +26,9 @@
           </ul>
           <div class="search_form">
             <form class="form-inline d-block text-right">
-              <%= form_with url: search_path, local: true, method: :get do |f| %>
-                <%= f.text_field :word , placeholder:"Search" %>
-                  <%= f.submit class: "btn btn-outline-success my-2 my-sm-0" %>
+              <%= form_with (url: search_path, local: true, method: :get) do |f| %>
+                <%= f.text_field :content , placeholder:"Search" %>
+                  <%= f.submit "検索", class: "btn btn-outline-success my-2 my-sm-0" %>
               <% end %>
             </form>
           </div>

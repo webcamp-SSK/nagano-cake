@@ -22,17 +22,9 @@ class Item < ApplicationRecord
     (price * 1.1).floor
   end
 
-  def self.looks(search, word)
-    if search == "perfect_match"
-      @item = Item.where("name LIKE?", "#{word}")
-    elsif search == "forward_match"
-      @item = Item.where("name LIKE?","#{word}%")
-    elsif search == "backward_match"
-      @item = Item.where("name LIKE?","%#{word}")
-    elsif search == "partial_match"
-      @item = Item.where("name LIKE?","%#{word}%")
-    else
-      @item = Item.all
+  def self.search(search)
+    if search
+      Item.where([' LIKE ?', "%#{search}%"])
     end
   end
 end
