@@ -5,7 +5,7 @@
     <div class="mb-4">
       <h5 class="mini-title offset-1">会員の方はこちらからログイン</h5>
     </div>
-    <div class="offset-3">
+    <div class="col-8 offset-2">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form_group row">
           <%= f.label :メールアドレス, class: "col-3" %>
@@ -21,10 +21,10 @@
         </div>
       <% end %>
     </div>
-    <div class="mb-3">
+    <div class="mb-4">
       <h5 class="mini-title offset-1">会員登録がお済みでない方</h5>
     </div>
-    <div class="offset-3">
+    <div class="offset-2">
       <p><%= render "public/shared/links" %> から新規登録を行ってください</p>
     </div>
   </div>
