@@ -1,8 +1,9 @@
-<div class='card mt-5'>
-  <h6 class="card-header bg-white text-center font-weight-bold" style="font-size: 15px">ジャンル検索</h6>
+<div class="card mt-3">
+  <h6 class="card-header bg-white text-center font-weight-bold">ジャンル検索</h6>
   <div class=" h-75 card-body">
+    <%= link_to '全ての商品を表示', items_path, class: "text-dark" %>
     <% genres.each do |genre| %>
-      <div class="my-4" style="font-size: 15px">
+      <div class="my-4">
         <%= link_to genre.name, items_path(genre_id: genre.id), class: "text-dark" %><br>
       </div>
     <% end %>
