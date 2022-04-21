@@ -16,16 +16,16 @@
       <tbody>
         <% @orders.each do |order| %>
           <tr>
-            <td class="py-3" style="width: 25%">
+            <td class="py-4" style="width: 25%">
               <u><%= link_to order.created_at.strftime('%Y/%m/%d　%H:%M:%S'), admin_order_path(order.id), class:"text-dark" %></u>
             </td>
-            <td class="py-3" style="width: 25%">
+            <td class="py-4" style="width: 25%">
               <%= order.customer.last_name + order.customer.first_name %>
             </td>
-            <td  class="py-3" style="width: 25%">
+            <td  class="py-4" style="width: 25%">
               <%= order.order_details.inject(0) { |sum, order_detail| sum + order_detail.amount } %>
             </td>
-            <td  class="py-3" style="width: 25%">
+            <td  class="py-4" style="width: 25%">
               <%= order.status_i18n %>
             </td>
           </tr>

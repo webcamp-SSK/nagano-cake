@@ -16,16 +16,16 @@
       <tbody>
         <% @customers.each do |customer| %>
           <tr>
-            <td style="width: 10%">
+            <td class="py-4" style="width: 10%">
               <%= customer.id %>
             </td>
-            <td style="width: 30%">
+            <td class="py-4" style="width: 30%">
               <u><%= link_to customer.last_name+customer.first_name, admin_customer_path(customer), class:"text-dark" %></u>
             </td>
-            <td style="width: 30%">
+            <td class="py-4" style="width: 30%">
               <%= customer.email %>
             </td>
-            <td style="width: 30%">
+            <td class="py-4" style="width: 30%">
               <% if customer.active_for_authentication? %>
                 <b class="text-success">有効</b>
               <% else %>
