@@ -1,5 +1,5 @@
 <h3 class="mt-3 mb-5 offset-2 mini-title">注文履歴一覧</h3>
-<div class="col-12">
+<div class="col-10 offset-1">
   <table class="table table-bordered">
     <thead　class="thead-light">
       <tr>
@@ -7,7 +7,7 @@
         <th class="col-5">配送先</th>
         <th class="col-2">注文商品</th>
         <th class="col-1">支払金額</th>
-        <th class="col-2">ステータス</th>
+        <th class="col-1">ステータス</th>
         <th class="col-2">注文詳細</th>
       </tr>
     </thead>
@@ -30,7 +30,7 @@
             </td>
             <td><%= order.total_payment.to_s(:delimited) %>円</td>
             <td><%= order.status_i18n %></td>
-            <td><%= link_to '表示する', order_path(order), class: "btn btn-primary" %></td>
+            <td ><%= link_to '表示する', order_path(order), class: "btn btn-primary mt-2" %></td>
           </tr>
         <% end %>
       <% else %>
