@@ -1,9 +1,7 @@
 class Public::SearchesController < ApplicationController
 	def search
-    if params[:name].present?
-    	@items = Item.where('name LIKE ?', "%#{params[:name]}%")
-    else
-    	@items = Item.none
-    
+    @range = params[:range]
+    @range == "Item"
+    @items = Item.looks(params[:search],params[:word])
   end
 end
