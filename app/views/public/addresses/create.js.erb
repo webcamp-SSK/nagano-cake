@@ -1,1 +1,3 @@
-$('#another_address_<%= @address.id %>').html("<%= j(render 'address_index'), address: @address %>")
+$('#another_address').html("<%= j(render 'address_index', addresses: @addresses) %>");
+$('#address_form').html("<%= j(render 'address_form', address: @address, obj: @address) %>");
+$('.form-control').val('');

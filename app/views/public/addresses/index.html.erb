@@ -1,8 +1,8 @@
 <h3 class="my-3 offset-2 mini-title">配達先登録 ／ 一覧</h3>
 <div class="col-11 offset-1 mb-5">
-  <%= form_with model: @address, method: :post, local: false do |f| %>
-    <%= render 'public/addresses/address_form', address: @address, f: f, obj: @address %>
-  <% end %>
+  <div id="address_form">
+    <%= render 'public/addresses/address_form', address: @address, obj: @address %>
+  </div>
 </div>
 
 <div class="col-10 offset-1">
@@ -15,10 +15,8 @@
         <th class="col-4"></th>
       </tr>
     </thead>
-      <% @addresses.each do |address| %>
-        <tbody id="another_address_<%= address.id %>">
-          <%= render 'public/addresses/address_index', address: address %>
-        </tbody>
-      <% end %>
+    <tbody id="another_address">
+      <%= render 'public/addresses/address_index', addresses: @addresses %>
+    </tbody>
   </table>
 </div>

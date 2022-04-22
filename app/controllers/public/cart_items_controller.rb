@@ -21,6 +21,7 @@ class Public::CartItemsController < ApplicationController
       if @cart_item.save
         redirect_to cart_items_path
       else
+        @genres = Genre.all
         render template: 'public/items/show'
       end
     end
