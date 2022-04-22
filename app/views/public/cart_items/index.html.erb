@@ -1,6 +1,6 @@
-<div class="row col-11 mt-5 mb-2">
-  <h3 class="ml-5 mini-title">ショッピングカート</h3>
-  <%= link_to 'カートを空にする', cart_item_destroy_all_path(current_customer.cart_items), method: :delete, class: "btn btn-danger offset-8" %>
+<div class="row col-11 offset-1 mt-5 mb-2">
+  <h3 class="mini-title">ショッピングカート</h3>
+  <%= link_to 'カートを空にする', cart_item_destroy_all_path(current_customer.cart_items), method: :delete, class: "btn btn-danger offset-7" %>
 </div>
 
   <div class="col-9 offset-1">
