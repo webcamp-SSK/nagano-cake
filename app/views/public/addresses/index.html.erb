@@ -1,6 +1,6 @@
 <h3 class="my-3 offset-2 mini-title">配達先登録 ／ 一覧</h3>
 <div class="col-11 offset-1 mb-5">
-  <%= form_with model: @address, method: :post do |f| %>
+  <%= form_with model: @address, method: :post, local: false do |f| %>
     <%= render 'public/addresses/address_form', address: @address, f: f, obj: @address %>
   <% end %>
 </div>
@@ -15,12 +15,10 @@
         <th class="col-4"></th>
       </tr>
     </thead>
-    <% if @addresses.present? %>
-      <% @addresses.each do |another_address| %>
-        <%= render 'public/addresses/address_index', address: another_address %>
+      <% @addresses.each do |address| %>
+        <tbody id="another_address_<%= address.id %>">
+          <%= render 'public/addresses/address_index', address: address %>
+        </tbody>
       <% end %>
-    <% else %>
-      <p>ありません</p>
-    <% end %>
   </table>
 </div>
