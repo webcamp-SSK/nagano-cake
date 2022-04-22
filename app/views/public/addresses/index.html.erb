@@ -1,7 +1,8 @@
 <h3 class="my-3 offset-2 mini-title">配達先登録 ／ 一覧</h3>
 <div class="col-11 offset-1 mb-5">
+  <div id="error"><%= render 'layouts/errors', obj: @address %></div>
   <div id="address_form">
-    <%= render 'public/addresses/address_form', address: @address, obj: @address %>
+    <%= render 'public/addresses/address_form', address: @address %>
   </div>
 </div>
 
