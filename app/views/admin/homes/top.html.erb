@@ -1,6 +1,10 @@
 <div class="p-5">
   <h3 class="ml-5 mini-title">注文履歴一覧</h3>
 </div>
+<%= form_with url: admin_root_path, method: :get do |f| %>
+  <%= f.select :status, Order.statuses.keys.map { |k| [t("enums.order.status.#{k}"), k] } %>
+  <%= f.submit "並替え" %>
+<% end %>
 
 <div class="px-5">
   <div class="row mx-5">
