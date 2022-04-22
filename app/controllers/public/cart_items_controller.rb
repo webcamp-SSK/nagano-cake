@@ -14,11 +14,13 @@ class Public::CartItemsController < ApplicationController
       @cart_item = current_customer.cart_items.find_by(item_id: @item.id)
       @cart_item.amount += @new_cart_item.amount
       @cart_item.save
+      flash[:notice] = "カートに商品が追加されました"
       redirect_to cart_items_path
     else
       @cart_item = CartItem.new(cart_item_params)
       @cart_item.customer_id = current_customer.id
       if @cart_item.save
+        flash[:notice] = "カートに商品が追加されました"
         redirect_to cart_items_path
       else
         @genres = Genre.all
@@ -30,6 +32,7 @@ class Public::CartItemsController < ApplicationController
   def update
     @cart_item = CartItem.find(params[:id])
     if @cart_item.update(cart_item_params)
+      flash[:notice] = "商品の数量が更新されました"
       redirect_to request.referer
     else
       render :index
@@ -39,11 +42,13 @@ class Public::CartItemsController < ApplicationController
   def destroy
     cart_item = CartItem.find(params[:id])
     cart_item.destroy
+    flash[:notice] = "カートの商品が削除されました"
     redirect_to request.referer
   end
 
   def destroy_all
     current_customer.cart_items.destroy_all
+    flash[:notice] = "カートの商品が全て削除されました"
     redirect_to request.referer
   end
 
