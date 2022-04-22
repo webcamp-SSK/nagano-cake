@@ -1,3 +1,4 @@
 $('#another_address').html("<%= j(render 'address_index', addresses: @addresses) %>");
 $('#address_form').html("<%= j(render 'address_form', address: @address, obj: @address) %>");
 $('.form-control').val('');
+$('#flash-success').html("<%= j(render "layouts/notice")%>");
