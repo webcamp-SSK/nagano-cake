@@ -83,7 +83,7 @@ h1{
 footer{
   background: linear-gradient(#FF99CC,#FF9999);
   font-family: cursive;
-  line-height: 60px;
+  line-height: 40px;
 }
 
 .image1 {
@@ -105,4 +105,8 @@ footer{
 #slide{
   width: 700px;
   height: 450px;
+}
+
+.card-header{
+  background-color: blue;
 }
