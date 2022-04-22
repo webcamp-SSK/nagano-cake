@@ -24,6 +24,7 @@ class Public::CartItemsController < ApplicationController
         redirect_to cart_items_path
       else
         @genres = Genre.all
+        flash[:notice] = "商品の個数を選択してください"
         render template: 'public/items/show'
       end
     end

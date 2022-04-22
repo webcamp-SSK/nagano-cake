@@ -65,11 +65,9 @@ class Public::OrdersController < ApplicationController
     @items_price = @cart_items.inject(0) { |sum, item| sum + item.subtotal }
     @total_payment = @shipping_cost + @items_price
 
-
   end
 
   def complete
-
   end
 
   private
