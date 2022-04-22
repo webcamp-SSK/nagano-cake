@@ -20,7 +20,9 @@
       <%= render 'layouts/customer_header' %>
     <% end %>
     <div class="min-vh-100">
-      <p id="notice"><%= notice %></p>
+      <div id="flash-success">
+        <%=render "layouts/notice" %>
+      </div>
       <%= yield %>
     </div>
     <%= render 'layouts/footer' %>

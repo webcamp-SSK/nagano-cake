@@ -14,7 +14,7 @@ class Admin::GenresController < ApplicationController
     @genres = Genre.all
     @genre = Genre.new(genre_params)
     if @genre.save
-      flash[:notice] = "ジャンルを作成しました。"
+      flash.now[:notice] = "ジャンルを作成しました。"
     else
       render "index"
     end
