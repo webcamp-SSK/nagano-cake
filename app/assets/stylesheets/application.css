@@ -64,7 +64,6 @@ header{
 }
 
 main{
-  background-image: url(background.jpeg);
   position: relative;
   background-size: cover;
 }
