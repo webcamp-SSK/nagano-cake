@@ -1,12 +1,20 @@
 <!--<div class="container">-->
   <div class="row" >
-    <div class = "genre_box col-2 offset-1 mt-5" >
+    <div class = "genre_box offset-1 col-2 mt-5" >
       <%= render 'public/items/genre_search', genres: @genres %>
     </div>
-      <div class="col-6">
+      <div class="col-8">
         <div class= "row d-flex justify-content-center">
           <div class= "card border border-0 mt-5" >
-            <%= image_tag 'top.jpeg', class:"card-img" %>
+            <div id="slide">
+              <div id="theTarget">
+                <div class="image1"></div>
+                <div class="image2"></div>
+                <div class="image3"></div>
+                <div class="image4"></div>
+                <div class="image5"></div>
+              </div>
+            </div>
               <div class="card-img-overlay d-flex justify-content-center align-items-center" >
                 <p class="card-text" >
                   ようこそ、ながのCAKEへ!<br>
