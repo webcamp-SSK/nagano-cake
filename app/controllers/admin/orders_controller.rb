@@ -17,8 +17,8 @@ class Admin::OrdersController < ApplicationController
     if @order.status == "confirm"
       @order_details.update_all('making_status = 1')
     end
+    flash[:notice] = "注文ステータスを更新しました"
     redirect_to request.referer
-
   end
 
   private
@@ -27,8 +27,8 @@ class Admin::OrdersController < ApplicationController
       params.require(:order).permit(:status)
     end
 
-    def order_detail_params
-      params.require(:order_detail).permit(:making_status)
-    end
+    # def order_detail_params
+    #   params.require(:order_detail).permit(:making_status)
+    # end
 
 end
