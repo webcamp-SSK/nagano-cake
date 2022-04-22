@@ -39,6 +39,7 @@ ja:
         introduction: "商品説明"
         price: "値段"
         genre: "ジャンル"
+        image: "商品写真"
   
       genre:
         name: "ジャンル名"
