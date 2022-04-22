@@ -32,7 +32,7 @@ ja:
         last_name_kana: "苗字(カナ)"
         postal_code: "郵便番号"
         address: "住所"
-        phone_number: "電話番号"
+        telephone_number: "電話番号"
   
       item:
         name: "商品名"
