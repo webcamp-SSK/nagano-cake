@@ -1,0 +1,16 @@
+<div class="relative-post-evaluation">
+  <span id="star-rate-<%= comment.id %>"></span>
+  <script>
+  $('#star-rate-<%= comment.id %>').empty();
+    $('#star-rate-<%= comment.id %>').raty({
+      size: 36,
+      starOff: "<%= asset_path('star-off.png') %>",
+      starOn: "<%= asset_path('star-on.png') %>",
+      starHalf: "<%= asset_path('star-half.png') %>",
+      half: true,
+      readOnly: true,
+      score: <%= comment.rate %>,
+    });
+  </script>
+  <%= comment.rate %>
+</div>

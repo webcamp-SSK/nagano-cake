@@ -1,2 +1,61 @@
-<h1>Public::Comments#index</h1>
-<p>Find me in app/views/public/comments/index.html.erb</p>
+平均点
+
+<div id="star-rate-<%= @item.id %>"></div>
+
+<script>
+  $('#star-rate-<%= @item.id %>').raty({
+    size: 36,
+    starOff: "<%= asset_path('star-off.png') %>",
+    starOn: "<%= asset_path('star-on.png') %>",
+    starHalf: "<%= asset_path('star-half.png') %>",
+    half: true,
+    readOnly: true,
+    score: "<%= @item.comments.average(:rate).to_f.round(1) %>",
+    //注目ポイント↑ 平均点を算出し、round関数で切り上げ
+  });
+</script>
+
+
+
+
+<%= form_with model:[@item, @comment], method: :post do |f| %>
+<div class="form-group">
+  <%= f.text_area :comment,rows:'4',class:"form-control" %><br>
+
+  <div class="form-group" id="star">
+    <%= f.label :Rate %>
+    <%= f.hidden_field :rate, id: :review_star %>
+    <script>
+    $('#star').empty();
+      $('#star').raty({
+        size     : 36,
+        starOff:  '<%= asset_path('star-off.png') %>',
+        starOn : '<%= asset_path('star-on.png') %>',
+        starHalf: '<%= asset_path('star-half.png') %>',
+        scoreName: 'comment[rate]',
+        half: true,
+      });
+    </script>
+  </div>
+
+  <%= f.submit "送信"%>
+</div>
+<% end %>
+
+<table>
+  <tbody>
+    <% @item.comments.each do |comment| %>
+    <tr>
+      <td>
+        <%= comment.customer.first_name %>
+      </td>
+      <td>
+        <%= comment.comment %>
+      </td>
+      <td>
+        <%= render "star_rate", comment:comment %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

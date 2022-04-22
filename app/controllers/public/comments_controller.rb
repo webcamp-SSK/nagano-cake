@@ -1,6 +1,8 @@
 class Public::CommentsController < ApplicationController
   def index
     @item = Item.find(params[:item_id])
+    @comment = current_customer.comments.new
+    # @comments = @item.comments
 
 
   end
@@ -15,4 +17,10 @@ class Public::CommentsController < ApplicationController
       render "index"
     end
   end
+
+  private
+
+    def comment_params
+      params.require(:comment).permit(:customer_id, :item_id, :comment, :rate)
+    end
 end

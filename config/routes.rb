@@ -18,9 +18,7 @@ Rails.application.routes.draw do
     resources :customers, only: [:index, :show, :edit, :update] do
       get 'order_index' => 'customers#order_index'
     end
-    resources :items, except: [:destroy] do
-      resources :comments, only: [:index, :create]
-    end
+    resources :items, except: [:destroy]
     resources :genres, only: [:index, :create, :edit, :update]
     resources :orders, only: [:show, :update]
     resources :order_details, only: [:update]
@@ -31,7 +29,9 @@ Rails.application.routes.draw do
   scope module: :public do
     root 'homes#top'
     get 'homes/about'
-    resources :items, only: [:index, :show]
+    resources :items, only: [:index, :show] do
+      resources :comments, only: [:index, :create]
+    end
     resources :cart_items, only: [:index, :create, :update, :destroy] do
       delete 'destroy_all' => 'cart_items#destroy_all'
     end
