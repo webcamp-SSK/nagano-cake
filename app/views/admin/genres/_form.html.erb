@@ -1,0 +1,7 @@
+<%= form_with model:genre, url: "/admin/genres", method: :post, local:false,class:"form-inline pl-5" do |f| %>
+  <div class="field form-group">
+    <%= f.label :ジャンル名, class:"mr-5" %>
+    <%= f.text_field :name, placeholder: "ジャンル名", class:"genre-form" %>
+  </div>
+  <%= f.submit "新規登録", class:"btn btn-success btn-lg px-4 ml-5" %>
+<% end %>
