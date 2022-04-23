@@ -12,21 +12,21 @@
   </head>
 
   <body>
-    <div class="min-vh-100">
-      <% if current_customer == nil && current_admin == nil %>
-        <%= render 'layouts/guest_header' %>
-      <% elsif current_customer == nil && current_admin.present? %>
-        <%= render 'layouts/admin_header' %>
-      <% else current_customer == true && current_admin == nill %>
-        <%= render 'layouts/customer_header' %>
-      <% end %>
-      <main>
+    <% if current_customer == nil && current_admin == nil %>
+      <%= render 'layouts/guest_header' %>
+    <% elsif current_customer == nil && current_admin.present? %>
+      <%= render 'layouts/admin_header' %>
+    <% else current_customer == true && current_admin == nill %>
+      <%= render 'layouts/customer_header' %>
+    <% end %>
+    <main>
+      <div class="min-vh-100">
         <div id="flash-success">
           <%=render "layouts/notice" %>
         </div>
         <%= yield %>
-      </main>
-    </div>
+      </div>
+    </main>
     <%= render 'layouts/footer' %>
   </body>
 </html>
