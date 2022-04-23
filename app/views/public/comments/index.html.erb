@@ -24,7 +24,7 @@
 </div>
 
 <script>
-  $('#star').empty();
+  $('#star-rate-<%= @item.id %>').empty();
   $('#star-rate-<%= @item.id %>').raty({
     size: 36,
     starOff: "<%= asset_path('star-off.png') %>",
