@@ -73,7 +73,7 @@ main{
 }
 
 .min-vh-100{
-  background-color: rgba(255,255,255,0.4);
+  background-color: rgba(255,255,255,0.6);
 }
 
 h1{
@@ -107,6 +107,21 @@ footer{
   height: 450px;
 }
 
-.card-header{
-  background-color: blue;
+.card{
+  opacity: 0.7;
+}
+
+.pagination>li>a {
+  border: none;
+  color: #ff33cc !important;
+}
+
+.pagination>.active>a {
+  background: #ff33cc !important;
+  color: #fff !important
+}
+
+.pagination>li>a:hover {
+  background-color: #ff33cc !important;
+  color: #fff !important;
 }
