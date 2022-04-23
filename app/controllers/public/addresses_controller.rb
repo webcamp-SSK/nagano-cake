@@ -15,8 +15,6 @@ class Public::AddressesController < ApplicationController
       flash.now[:notice] = "配送先の新規登録をしました。"
     else
       @addresses = current_customer.addresses
-      # flash.now[:notice] = "登録できませんでした"
-      render :index
     end
   end
 
