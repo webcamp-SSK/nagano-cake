@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_17_044452) do
+ActiveRecord::Schema.define(version: 2022_04_23_001154) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -70,6 +70,18 @@ ActiveRecord::Schema.define(version: 2022_04_17_044452) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["customer_id"], name: "index_cart_items_on_customer_id"
     t.index ["item_id"], name: "index_cart_items_on_item_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.integer "customer_id", null: false
+    t.integer "item_id", null: false
+    t.text "comment"
+    t.float "rate"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "nick_name"
+    t.index ["customer_id"], name: "index_comments_on_customer_id"
+    t.index ["item_id"], name: "index_comments_on_item_id"
   end
 
   create_table "customers", force: :cascade do |t|
@@ -140,6 +152,8 @@ ActiveRecord::Schema.define(version: 2022_04_17_044452) do
   add_foreign_key "addresses", "customers"
   add_foreign_key "cart_items", "customers"
   add_foreign_key "cart_items", "items"
+  add_foreign_key "comments", "customers"
+  add_foreign_key "comments", "items"
   add_foreign_key "items", "genres"
   add_foreign_key "order_details", "items"
   add_foreign_key "order_details", "orders"
