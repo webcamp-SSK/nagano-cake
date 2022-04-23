@@ -113,15 +113,15 @@ footer{
 
 .pagination>li>a {
   border: none;
-  color: #ff33cc !important;
+  color: #ff6699 !important;
 }
 
 .pagination>.active>a {
-  background: #ff33cc !important;
+  background: #ff6699 !important;
   color: #fff !important
 }
 
 .pagination>li>a:hover {
-  background-color: #ff33cc !important;
+  background-color: #ff6699 !important;
   color: #fff !important;
 }
