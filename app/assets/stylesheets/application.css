@@ -13,56 +13,115 @@
  *= require_tree .
  *= require_self
  */
-  
-  main {
-    padding: 50px 100px;
-  }
  
- 
-  .field_with_errors {
-    display: contents;
-  }
-  
-  .mini-title {
-    background-color: rgb(230, 230, 230);
-    display: inline-block;
-    padding:0 20px;
-  }
-  
-  .card-img {
-    height: 450px;
-    width:550px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  
-  .box{
-    height: 300px;
-    width: 500px;
-    z-index: -1;
-    position: absolute;
-  }
-  
-  .card-text{
-    height: 200px;
-    width: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-  }
-  
-  .h1{
-    font-family: cursive;
-  }
-  
-  .pagination {
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  [role="link"] {
-    cursor: pointer;
-  }
+@import "skippr";
+
+main {
+  padding: 50px 100px;
+}
+
+.field_with_errors {
+ display: contents;
+}
+
+ .mini-title {
+  background-color: rgb(230, 230, 230);
+  display: inline-block;
+  padding:0 20px;
+}
+
+.box{
+  height: 300px;
+  width: 500px;
+  z-index: -1;
+  position: absolute;
+}
+
+.card-text{
+  height: 200px;
+  width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  z-index: 9999;
+}
+
+.h1{
+  font-family: cursive;
+}
+
+.pagination {
+  justify-content: center;
+  margin-top: 20px;
+}
+
+header{
+  background: linear-gradient(#FF99CC,#FF9999);
+  line-height: 30px;
+}
+
+main{
+  background-image: url(background.jpeg);
+  background-size: cover;
+  background-position: center
+}
+
+.min-vh-100{
+  background-color: rgba(255,255,255,0.6);
+}
+
+h1{
+  font-family: cursive;
+}
+
+footer{
+  background: linear-gradient(#FF99CC,#FF9999);
+  font-family: cursive;
+  line-height: 40px;
+}
+
+.image1 {
+  background-image: url(image1.jpeg);
+}
+.image2 {
+  background-image: url(image2.jpeg);
+}
+.image3 {
+  background-image: url(image3.jpeg);
+}
+.image4 {
+  background-image: url(image4.jpeg);
+}
+.image5 {
+  background-image: url(image5.jpeg);
+}
+
+#slide{
+  width: 700px;
+  height: 450px;
+}
+
+.card{
+  opacity: 0.7;
+}
+
+.pagination>li>a {
+  border: none;
+  color: #ff6699 !important;
+}
+
+.pagination>.active>a {
+  background: #ff6699 !important;
+  color: #fff !important
+}
+
+.pagination>li>a:hover {
+  background-color: #ff6699 !important;
+  color: #fff !important;
+}
+
+[role="link"] {
+  cursor: pointer;
+}
