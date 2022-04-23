@@ -3,10 +3,9 @@
 </div>
 <div class="col-11">
   <div class="d-flex justify-content-end mb-4">
-    <%= link_to "#{@customer.last_name+@customer.first_name}さんの一覧を表示", admin_customer_order_index_path, class: "mt-2 mr-3" %>
-    <%= form_with url: admin_customer_order_index_path(@customer.id), method: :get do |f| %>
-      <%= f.select :status, Order.statuses.keys.map { |k| [t("enums.order.status.#{k}"), k] } %>
-      <%= f.submit "並び替える", class: "btn btn-info" %>
+    <%= form_tag(admin_customer_order_index_path(@customer.id), method: :get) do %>
+      <%= select_tag :status, options_for_select({ "一覧" => "ichiran", "入金待ち" => "waiting", "入金確認" => "confirm", "製作中" => "production", "発送準備中" => "preparation", "発送完了" => "sent" }) %>
+      <%= submit_tag '検索する', class: "btn btn-info" %>
     <% end %>
   </div>
 </div>
