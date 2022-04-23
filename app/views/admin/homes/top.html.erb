@@ -7,7 +7,7 @@
       <%= f.select :status, Order.statuses.keys.map { |k| [t("enums.order.status.#{k}"), k] } %>
       <%= f.submit "並び替える", class: "btn btn-info" %>
     <% end %>
-  </div>  
+  </div>
 </div>
 
 <div class="px-5">
@@ -23,8 +23,7 @@
       </thead>
       <tbody>
         <% @orders.each do |order| %>
-          <tr>
-            <tr onclick='window.location="<%= '/admin/orders/' + order.id.to_s %>"' role="link">
+          <tr onclick='window.location="<%= '/admin/orders/' + order.id.to_s %>"' role="link">
             <td class="py-4" style="width: 25%">
               <u><%= link_to order.created_at.strftime('%Y/%m/%d　%H:%M:%S'), admin_order_path(order.id), class:"text-dark" %></u>
             </td>

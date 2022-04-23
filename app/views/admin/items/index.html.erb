@@ -13,7 +13,7 @@
 
 <div class="px-5">
   <div class="row mx-5 px-5">
-    <table class="table mx-5 table-borderless">
+    <table class="table mx-5 table-borderless table-hover">
       <thead class="thead-light">
         <tr>
           <th style="width: 10%">商品ID</th>
@@ -25,7 +25,7 @@
       </thead>
       <tbody>
         <% @items.each do |item| %>
-          <tr>
+          <tr onclick='window.location="<%= '/admin/items/' + item.id.to_s %>"' role="link">
             <td class="py-4" style="width: 10%">
               <%= item.id %>
             </td>
