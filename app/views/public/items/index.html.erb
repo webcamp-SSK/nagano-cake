@@ -5,15 +5,15 @@
   <div class="col-8">
     <div class="row">
       <h3 class="bg-light text-center col-4 my-3 ml-3">商品一覧</h3>
-      <div class="my-3 d-flex align-items-end"><span>（全<%= Item.where(is_active: 1).count %>件）</span></div>
+      <div class="my-3 d-flex align-items-end"><span>（全<%= @items.count %>件）</span></div>
     </div>
     <div class="row mx-auto">
       <% @items.each do |item| %>
         <div class="col-md-3 col-sm-3 my-3">
           <%= link_to item_path(item) do %>
             <%= image_tag item.image, size: "150x150" %>
-          <% end %>
             <p class="card-title text-dark"><%= item.name %></p>
+            <% end %>
           <p>￥<%= item.price.to_s(:delimited) %></p>
         </div>
       <% end %>
