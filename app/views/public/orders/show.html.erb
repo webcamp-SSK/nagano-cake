@@ -1,14 +1,14 @@
-<div class="container mb-5">
+<div class="container">
   <div class="row">
-    <div class="col-11 offset-1">
-      <h4 class="my-5 offset-1 mini-title">注文履歴詳細</h4>
+    <div class="col-11">
+      <h3 class="my-5 mini-title">注文履歴詳細</h3>
     </div>
   </div>
 
   <div class="row">
     <div class="col">
       <strong>注文情報</strong>
-      <table class="table table-bordered">
+      <table class="table table-bordered table-background">
         <tbody>
           <tr>
             <td class="table-active">注文日</td>
@@ -37,7 +37,7 @@
 
     <div class="col">
       <strong>請求情報</strong>
-      <table class="table table-bordered">
+      <table class="table table-bordered table-background">
         <tr>
           <td class="table-active">商品合計</td>
           <td>¥<%= (@order.total_payment - @order.shipping_cost).to_s(:delimited) %>－</td>
@@ -55,11 +55,11 @@
   </div>
 
   <div class="row">
-    <div class="col">
+    <div class="col mt-3">
       <strong>注文内容</strong>
       <table class="table table-bordered">
         <thead>
-          <tr>
+          <tr class="table-background">
             <th class="table-active">商品</th>
             <th class="table-active">単価（税込）</th>
             <th class="table-active">個数</th>
@@ -68,7 +68,7 @@
         </thead>
         <tbody>
           <% @order.order_details.all.each do |order_detail| %>
-            <tr>
+            <tr class="table-background">
               <td><%= order_detail.item.name %></td>
               <td>¥<%= (order_detail.item.price).to_s(:delimited) %>－</td>
               <td><%= order_detail.amount %>　個</td>
