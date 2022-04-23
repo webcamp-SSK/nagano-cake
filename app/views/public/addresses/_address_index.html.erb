@@ -1,4 +1,5 @@
-<tbody>
+<% addresses.each do |address| %>
+　
   <tr>
     <td><%= address.postal_code %></td>
     <td><%= address.address %></td>
@@ -6,8 +7,8 @@
     <td>
       <div class="d-flex justify-content-center">
         <%= link_to '編集する', edit_address_path(address), class: "btn btn-success" %>
-        <%= link_to '削除する', address_path(address), method: :delete, class: "btn btn-danger offset-1" %>
+        <%= link_to '削除する', address_path(address), method: :delete, remote: true, class: "btn btn-danger offset-1" %>
       </div>
     </td>
   </tr>
-</tbody>
+<% end %>  

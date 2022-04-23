@@ -16,7 +16,7 @@ class Admin::CustomersController < ApplicationController
   def update
     @customer = Customer.find(params[:id])
     if @customer.update(customer_params)
-      flash[:notice] = "#{@customer.last_name + @customer.first_name}さんの情報を更新しました。"
+      flash[:notice] = "#{@customer.last_name + @customer.first_name}さんの会員情報を更新しました"
       redirect_to admin_customer_path(@customer.id)
     else
       render "edit"
@@ -25,7 +25,14 @@ class Admin::CustomersController < ApplicationController
 
   def order_index
     @customer = Customer.find(params[:customer_id])
-    @orders = @customer.orders.all.page(params[:page]).per(10)
+    if params[:status] == "ichiran"
+      @orders = Order.all.page(params[:page]).per(10)
+    elsif params[:status]
+      @order_statuses = Order.where(status: params[:status])
+      @orders = @order_statuses.page(params[:page]).per(10)
+    else
+      @orders = Order.all.page(params[:page]).per(10)
+    end
   end
 
   private

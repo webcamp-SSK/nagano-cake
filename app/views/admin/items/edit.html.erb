@@ -1,9 +1,12 @@
-<div class="p-5">
-  <h3 class="mb-5 ml-5 mini-title">商品編集</h3>
+<div class="px-5 pt-5 pb-4 mt-5 ml-5">
+  <div class="ml-5 pl-5">
+    <h3 class="mb-3 ml-5 mini-title">商品編集</h3>
+  </div>
 </div>
 
 <div class="row px-5 mx-5">
   <div class="col-6 offset-3">
+    <div id="error"><%= render 'layouts/errors', obj: @item %></div>
     <%= form_with model:@item, url:admin_item_path(@item), method: :patch do |f| %>
       <div class="field form-group row">
         <%= f.label :商品画像, class: "col-3" %>

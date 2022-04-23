@@ -14,25 +14,17 @@
  *= require_self
  */
 
- @import "skippr";
+@import "skippr";
 
- .field_with_errors {
-   display: contents;
- }
+.field_with_errors {
+ display: contents;
+}
 
  .mini-title {
   background-color: rgb(230, 230, 230);
   display: inline-block;
   padding:0 20px;
 }
-
-/*.card-img {
-  height: 450px;
-  width:550px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}*/
 
 .box{
   height: 300px;
@@ -73,6 +65,7 @@ main{
 }
 
 .min-vh-100{
+  padding: 50px 100px;
   background-color: rgba(255,255,255,0.6);
 }
 
@@ -124,4 +117,12 @@ footer{
 .pagination>li>a:hover {
   background-color: #ff6699 !important;
   color: #fff !important;
+}
+
+[role="link"] {
+  cursor: pointer;
+}
+
+.table-background {
+  background-color: rgba(255,255,255,0.8);
 }
