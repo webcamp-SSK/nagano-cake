@@ -1,7 +1,11 @@
 class Public::CommentsController < ApplicationController
+  before_action :authenticate_customer!, only: :create
+
   def index
     @item = Item.find(params[:item_id])
-    @comment = current_customer.comments.new
+    if customer_signed_in?
+      @comment = current_customer.comments.new
+    end
     # @comments = @item.comments
 
 
@@ -21,6 +25,6 @@ class Public::CommentsController < ApplicationController
   private
 
     def comment_params
-      params.require(:comment).permit(:customer_id, :item_id, :comment, :rate)
+      params.require(:comment).permit(:customer_id, :item_id, :comment, :rate, :nick_name)
     end
 end

@@ -1,5 +1,4 @@
 class Comment < ApplicationRecord
-  before_action :authenticate_customer!
 
   belongs_to :customer
   belongs_to :item
@@ -9,5 +8,6 @@ class Comment < ApplicationRecord
     validates :item_id
     validates :comment
     validates :rate
+    validates :nick_name
   end
 end
