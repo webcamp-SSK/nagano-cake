@@ -18,6 +18,7 @@ class Admin::OrderDetailsController < ApplicationController
     if params[:order_detail][:making_status] == "making"
       @order.update_attribute(:status, 2)
     end
+    flash[:notice] = "製作ステータスを更新しました"
     redirect_to admin_order_path(id: @order_detail.order_id)
   end
 
