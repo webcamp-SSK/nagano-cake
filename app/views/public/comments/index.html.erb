@@ -13,17 +13,18 @@
   </div>
 
   <% if customer_signed_in? %>
-    <div class="mx-5 px-5">
+    <div class="mx-5 px-5 mb-3">
       <%= render "form", item: @item, comment: @comment %>
     </div>
   <% end %>
 
-  <div>
+  <div class="px-5">
     <%= render "index", item: @item %>
   </div>
 </div>
 
 <script>
+  $('#star').empty();
   $('#star-rate-<%= @item.id %>').raty({
     size: 36,
     starOff: "<%= asset_path('star-off.png') %>",
