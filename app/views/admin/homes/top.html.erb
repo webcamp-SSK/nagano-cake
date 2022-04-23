@@ -1,14 +1,18 @@
 <div class="p-5">
   <h3 class="ml-5 mini-title">注文履歴一覧</h3>
 </div>
-<%= form_with url: admin_root_path, method: :get do |f| %>
-  <%= f.select :status, Order.statuses.keys.map { |k| [t("enums.order.status.#{k}"), k] } %>
-  <%= f.submit "並替え" %>
-<% end %>
+<div class="col-11">
+  <div class="d-flex justify-content-end mb-4">
+    <%= form_with url: admin_root_path, method: :get do |f| %>
+      <%= f.select :status, Order.statuses.keys.map { |k| [t("enums.order.status.#{k}"), k] } %>
+      <%= f.submit "並び替える", class: "btn btn-info" %>
+    <% end %>
+  </div>  
+</div>
 
 <div class="px-5">
   <div class="row mx-5">
-    <table class="table mx-5 table border-bottom">
+    <table class="table mx-5 table border-bottom table-hover">
       <thead class="thead-light">
         <tr>
           <th style="width: 25%">購入日時</th>
@@ -20,6 +24,7 @@
       <tbody>
         <% @orders.each do |order| %>
           <tr>
+            <tr onclick='window.location="<%= '/admin/orders/' + order.id.to_s %>"' role="link">
             <td class="py-4" style="width: 25%">
               <u><%= link_to order.created_at.strftime('%Y/%m/%d　%H:%M:%S'), admin_order_path(order.id), class:"text-dark" %></u>
             </td>
