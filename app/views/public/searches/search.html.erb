@@ -3,7 +3,7 @@
   </div>
     <% if @records.exists? %>
       <div class="row mt-3">
-        <div class="col-12 mr-">
+        <div class="col-12">
           <div class="d-flex align-items-center justify-content-center flex-wrap m-2">
             <% @records.each do |item| %>
               <%= link_to item_path(item) do %>
