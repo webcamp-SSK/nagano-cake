@@ -9,28 +9,28 @@
       </tr>
     </table>
 
-    <table class="table table-bordered col-6 ml-3 mb-4 table-background">
+    <table class="table table-bordered col-7 ml-3 mb-4 table-background">
       <tbody>
         <tr>
-          <td class="col-4 table-active">氏名</td>
+          <th class="col-4 table-active">氏名</th>
           <td><%= current_customer.last_name %>　<%= current_customer.first_name %></td>
         </tr>
         <tr>
-          <td class="table-active">カナ</td>
+          <th class="table-active">カナ</th>
           <td><%= current_customer.last_name_kana %>　<%= current_customer.first_name_kana %></td>
         <tr>
-          <td class="table-active">郵便番号</td>
+          <th class="table-active">郵便番号</th>
           <td><%= current_customer.postal_code %></td>
         </tr>
         <tr>
-          <td class="table-active">住所</td>
+          <th class="table-active">住所</th>
           <td><%= current_customer.address %></td>
         </tr>
         <tr>
-          <td class="table-active">電話番号</td>
+          <th class="table-active">電話番号</th>
           <td><%= current_customer.telephone_number %></td>
         </tr>        <tr>
-          <td class="table-active">メールアドレス</td>
+          <th class="table-active">メールアドレス</th>
           <td><%= current_customer.email %></td>
         </tr>
       </tbody>
