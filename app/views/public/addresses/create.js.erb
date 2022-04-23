@@ -1,6 +1,4 @@
 $('#another_address').html("<%= j(render 'address_index', addresses: @addresses) %>");
-<!--$('#address_form').html("<%#= j(render 'address_form', address: @address, obj: @address) %>");-->
 $('.form-control').val('');
 $('#flash-success').html("<%= j(render "layouts/notice")%>");
 $('#error').html("<%= j(render 'layouts/errors', obj: @address) %>");
-<!--$("#address_submit").removeAttr("disable");-->
