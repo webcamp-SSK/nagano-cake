@@ -1,0 +1,38 @@
+<div class="p-5 mx-5">
+  <h3 class="mini-title">お客さまのレビュー</h3>
+
+  <div class="d-flex mt-3 mb-3">
+    <h4 class="mr-3"><%= @item.name %></h4>
+    <div id="star-rate-<%= @item.id %>" class="mr-3"></div>
+    <h5 class="mr-2"><b><%= @item.comments.average(:rate).to_f.round(1) %></b></h5>
+    <% if @item.comments.count == 0 %>
+      まだクチコミがありません
+    <% else %>
+      クチコミ数（<%= @item.comments.count %>）
+    <% end %>
+  </div>
+
+  <% if customer_signed_in? %>
+    <div class="mx-5 px-5 mb-3">
+      <%= render "form", item: @item, comment: @comment %>
+    </div>
+  <% end %>
+
+  <div class="px-5">
+    <%= render "index", item: @item %>
+  </div>
+</div>
+
+<script>
+  $('#star-rate-<%= @item.id %>').empty();
+  $('#star-rate-<%= @item.id %>').raty({
+    size: 36,
+    starOff: "<%= asset_path('star-off.png') %>",
+    starOn: "<%= asset_path('star-on.png') %>",
+    starHalf: "<%= asset_path('star-half.png') %>",
+    half: true,
+    readOnly: true,
+    score: "<%= @item.comments.average(:rate).to_f.round(1) %>",
+    //平均点を算出し、round関数で切り上げ
+  });
+</script>
