@@ -4,6 +4,7 @@
   <div class="d-flex mt-3 mb-3">
     <h4 class="mr-3"><%= @item.name %></h4>
     <div id="star-rate-<%= @item.id %>" class="mr-3"></div>
+    <h5 class="mr-2"><b><%= @item.comments.average(:rate).to_f.round(1) %></b></h5>
     <% if @item.comments.count == 0 %>
       まだクチコミがありません
     <% else %>
@@ -13,47 +14,12 @@
 
   <% if customer_signed_in? %>
     <div class="mx-5 px-5">
-      <%= form_with model:[@item, @comment], method: :post do |f| %>
-        <div class="form-group row">
-          <%= f.label :ニックネーム, class: "col-3" %>
-          <%= f.text_field :nick_name, class:"form-control col-5" %>
-        </div>
-        <div class="form-group row">
-          <%= f.label :クチコミ, class: "col-3" %>
-          <%= f.text_area :comment,rows:'3',class:"form-control col-9" %>
-        </div>
-        <div class="form-group row">
-          <%= f.label :評価, class: "col-3" %>
-          <div id="star" class="col-9 pl-0">
-          <%= f.hidden_field :rate, id: :review_star %>
-          <script>
-            $('#star').empty();
-            $('#star').raty({
-              size     : 36,
-              starOff:  '<%= asset_path('star-off.png') %>',
-              starOn : '<%= asset_path('star-on.png') %>',
-              starHalf: '<%= asset_path('star-half.png') %>',
-              scoreName: 'comment[rate]',
-              half: true,
-            });
-          </script>
-        </div>
-        <div class="mx-auto d-block mt-3">
-          <%= f.submit "投稿する", class: "btn btn-success" %>
-        </div>
-      </div>
-      <% end %>
+      <%= render "form", item: @item, comment: @comment %>
     </div>
   <% end %>
 
   <div>
-    <% @item.comments.each do |comment| %>
-      <div class="border mb-4 p-3">
-        <div class="d-flex"><div class="mr-4">お名前：<%= comment.nick_name %></div><%= render "star_rate", comment:comment %></div>
-        <div class="py-4"><%= comment.comment %></div>
-        <div class="d-flex justify-content-end" style="font-size:13px;"><%= comment.created_at.strftime('%Y/%m/%d') %></div>
-      </div>
-    <% end %>
+    <%= render "index", item: @item %>
   </div>
 </div>
 
