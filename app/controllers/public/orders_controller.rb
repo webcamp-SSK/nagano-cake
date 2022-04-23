@@ -41,6 +41,7 @@ class Public::OrdersController < ApplicationController
       @order.name = current_customer.last_name + current_customer.first_name
     elsif params[:order][:select_address] == "1"
       unless current_customer.addresses.exists? #配送先登録がない場合
+        flash.now[:notice] = "登録済みの住所がありません"
         render "new"
       else
         @address = Address.find(params[:order][:address_id])
@@ -50,6 +51,7 @@ class Public::OrdersController < ApplicationController
       end
     elsif params[:order][:select_address] == "2"
       if ( params[:order][:postal_code] || params[:order][:address] || params[:order][:name] ).empty?
+        flash.now[:notice] = "住所を正しく入力してください"
         render "new"
       else
         @order.postal_code = params[:order][:postal_code]
@@ -57,6 +59,7 @@ class Public::OrdersController < ApplicationController
         @order.name = params[:order][:name]
       end
     else
+      flash.now[:notice] = "住所を選択してください"
       render "new"
     end
 

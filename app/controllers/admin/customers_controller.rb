@@ -25,7 +25,12 @@ class Admin::CustomersController < ApplicationController
 
   def order_index
     @customer = Customer.find(params[:customer_id])
-    @orders = @customer.orders.all.page(params[:page]).per(10)
+   if params[:status]
+      @order_statuses = Order.where(status: params[:status])
+      @orders = @order_statuses.page(params[:page]).per(10)
+    else
+      @orders = Order.all.page(params[:page]).per(10)
+    end
   end
 
   private

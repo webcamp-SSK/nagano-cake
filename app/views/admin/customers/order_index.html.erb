@@ -1,5 +1,14 @@
-<div class="p-5">
+<div class="mb-4">
   <h3 class="ml-5 mini-title"><%= @customer.last_name+@customer.first_name %>さんの注文履歴</h3>
+</div>
+<div class="col-11">
+  <div class="d-flex justify-content-end mb-4">
+    <%= link_to "#{@customer.last_name+@customer.first_name}さんの一覧を表示", admin_customer_order_index_path, class: "mt-2 mr-3" %>
+    <%= form_with url: admin_customer_order_index_path(@customer.id), method: :get do |f| %>
+      <%= f.select :status, Order.statuses.keys.map { |k| [t("enums.order.status.#{k}"), k] } %>
+      <%= f.submit "並び替える", class: "btn btn-info" %>
+    <% end %>
+  </div>
 </div>
 
 <div class="px-5">
@@ -32,5 +41,4 @@
     </table>
   </div>
 </div>
-
 <%= paginate @orders %>

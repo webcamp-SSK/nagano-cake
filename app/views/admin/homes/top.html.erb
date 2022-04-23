@@ -1,4 +1,4 @@
-<div class="p-5">
+<div>
   <h3 class="ml-5 mini-title">注文履歴一覧</h3>
 </div>
 <div class="col-11">
@@ -24,16 +24,16 @@
       <tbody>
         <% @orders.each do |order| %>
           <tr onclick='window.location="<%= '/admin/orders/' + order.id.to_s %>"' role="link">
-            <td class="py-4" style="width: 25%">
+            <td class="py-4">
               <u><%= link_to order.created_at.strftime('%Y/%m/%d　%H:%M:%S'), admin_order_path(order.id), class:"text-dark" %></u>
             </td>
-            <td class="py-4" style="width: 25%">
+            <td class="py-4">
               <%= order.customer.last_name + order.customer.first_name %>
             </td>
-            <td  class="py-4" style="width: 25%">
+            <td  class="py-4">
               <%= order.order_details.inject(0) { |sum, order_detail| sum + order_detail.amount } %>
             </td>
-            <td  class="py-4" style="width: 25%">
+            <td  class="py-4">
               <%= order.status_i18n %>
             </td>
           </tr>

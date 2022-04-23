@@ -1,13 +1,11 @@
 <div class="px-5 mx-5">
-  <div class="p-5 mx-5 d-flex justify-content-between">
-    <div class="pl-5">
-      <h3 class="mini-title">商品一覧</h3>
-    </div>
-    <h3>
+  <div class="mx-5 row">
+    <div class="mb-5"><h3 class="mini-title">商品一覧</h3></div>
+    <div class="offset-9">
       <%= link_to(new_admin_item_path,style:"font-size:40px; color:orange;") do %>
         <i class="far fa-plus-square"></i>
       <% end %>
-    </h3>
+    </div>
   </div>
 </div>
 
@@ -18,9 +16,9 @@
         <tr>
           <th style="width: 10%">商品ID</th>
           <th style="width: 30%">商品名</th>
-          <th style="width: 10%">税込価格</th>
-          <th style="width: 40%">ジャンル</th>
-          <th style="width: 10%">ステータス</th>
+          <th style="width: 20%">税込価格</th>
+          <th style="width: 20%">ジャンル</th>
+          <th style="width: 20%">ステータス</th>
         </tr>
       </thead>
       <tbody>
@@ -29,16 +27,16 @@
             <td class="py-4" style="width: 10%">
               <%= item.id %>
             </td>
-            <td class="py-4" style="width: 30%">
+            <td class="py-4">
               <u><%= link_to item.name, admin_item_path(item), class:"text-dark" %></u>
             </td>
-            <td class="py-4" style="width: 10%">
+            <td class="py-4">
               <%= item.price.to_s(:delimited) %>
             </td>
-            <td class="py-4" style="width: 40%">
+            <td class="py-4">
               <%= item.genre.name %>
             </td>
-            <td class="py-4" style="width: 10%">
+            <td class="py-4">
               <% if item.is_active_i18n == "販売中" %>
                 <b class="text-success"><%= item.is_active_i18n %></b>
               <% else %>

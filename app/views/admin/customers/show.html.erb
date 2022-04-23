@@ -1,9 +1,9 @@
-<div class="p-5">
+<div class="mb-4">
   <h3 class="ml-5 mini-title"><%= @customer.last_name+@customer.first_name %>さんの会員詳細</h3>
 </div>
 
 <div class="row mx-5">
-  <table class="table mx-5 table-borderless col-7">
+  <table class="table mx-5 table-borderless col-6">
     <tbody>
       <tr>
         <td>会員ID</td>
@@ -43,14 +43,11 @@
           <% end %>
         </td>
       </tr>
-      <tr>
-        <td></td>
-        <td>
-          <%= link_to "編集する", edit_admin_customer_path(@customer), class: "btn btn-success mr-5" %>
-          <%= link_to "注文履歴一覧を見る",  admin_root_path, class: "btn btn-primary mr-5" %>
-          <%= link_to "#{@customer.last_name+@customer.first_name}さんの注文履歴一覧を見る", admin_customer_order_index_path(@customer), class: "btn btn-info" %>
-        </td>
-      </tr>
     </tbody>
   </table>
+</div>
+<div class="ml-5 mt-5">
+  <%= link_to "編集する", edit_admin_customer_path(@customer), class: "btn btn-success mr-3" %>
+  <%= link_to "注文履歴一覧を見る",  admin_root_path, class: "btn btn-primary mr-3" %>
+  <%= link_to "#{@customer.last_name+@customer.first_name}さんの注文履歴一覧を見る", admin_customer_order_index_path(@customer), class: "btn btn-info" %>
 </div>
