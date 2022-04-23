@@ -14,11 +14,11 @@
  *= require_self
  */
 
- @import "skippr";
+@import "skippr";
 
- .field_with_errors {
-   display: contents;
- }
+.field_with_errors {
+ display: contents;
+}
 
  .mini-title {
   background-color: rgb(230, 230, 230);
@@ -65,7 +65,7 @@ main{
 }
 
 .min-vh-100{
-  padding:50px 100px;
+  padding: 50px 100px;
   background-color: rgba(255,255,255,0.6);
 }
 
@@ -117,4 +117,12 @@ footer{
 .pagination>li>a:hover {
   background-color: #ff6699 !important;
   color: #fff !important;
+}
+
+[role="link"] {
+  cursor: pointer;
+}
+
+.table-background {
+  background-color: rgba(255,255,255,0.8);
 }

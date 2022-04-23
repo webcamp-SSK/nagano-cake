@@ -1,8 +1,11 @@
-<h3 class="my-3 offset-2 mini-title">配達先登録 ／ 一覧</h3>
+<div class="px-5 mx-5">
+  <h3 class="mb-5 mini-title">配達先登録 ／ 一覧</h3>
+</div>
 <div class="col-11 offset-1 mb-5">
-  <%= form_with model: @address, method: :post do |f| %>
-    <%= render 'public/addresses/address_form', address: @address, f: f, obj: @address %>
-  <% end %>
+  <div id="error"><%= render 'layouts/errors', obj: @address %></div>
+  <div id="address_form">
+    <%= render 'public/addresses/address_form', address: @address %>
+  </div>
 </div>
 
 <div class="col-10 offset-1">
@@ -15,12 +18,8 @@
         <th class="col-4"></th>
       </tr>
     </thead>
-    <% if @addresses.present? %>
-      <% @addresses.each do |another_address| %>
-        <%= render 'public/addresses/address_index', address: another_address %>
-      <% end %>
-    <% else %>
-      <p>ありません</p>
-    <% end %>
+    <tbody id="another_address">
+      <%= render 'public/addresses/address_index', addresses: @addresses %>
+    </tbody>
   </table>
 </div>

@@ -1,10 +1,18 @@
-<div class="p-5">
+<div class="mb-4">
   <h3 class="ml-5 mini-title"><%= @customer.last_name+@customer.first_name %>さんの注文履歴</h3>
+</div>
+<div class="col-11">
+  <div class="d-flex justify-content-end mb-4">
+    <%= form_tag(admin_customer_order_index_path(@customer.id), method: :get) do %>
+      <%= select_tag :status, options_for_select({ "一覧" => "ichiran", "入金待ち" => "waiting", "入金確認" => "confirm", "製作中" => "production", "発送準備中" => "preparation", "発送完了" => "sent" }) %>
+      <%= submit_tag '検索する', class: "btn btn-info" %>
+    <% end %>
+  </div>
 </div>
 
 <div class="px-5">
   <div class="row mx-5">
-    <table class="table mx-5 table border-bottom">
+    <table class="table mx-5 table border-bottom table-hover">
       <thead class="thead-light">
         <tr>
           <th style="width: 10%"></th>
@@ -15,7 +23,7 @@
       </thead>
       <tbody>
         <% @orders.each do |order| %>
-          <tr>
+          <tr onclick='window.location="<%= '/admin/orders/' + order.id.to_s %>"' role="link">
             <td style="width: 10%"></td>
             <td class="py-4" style="width: 40%">
               <u><%= link_to order.created_at.strftime('%Y/%m/%d　%H:%M:%S'), admin_order_path(order.id), class:"text-dark" %></u>
@@ -32,5 +40,4 @@
     </table>
   </div>
 </div>
-
 <%= paginate @orders %>
