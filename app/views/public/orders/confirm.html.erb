@@ -3,7 +3,7 @@
 </div>
 
 <div class="row mx-5">
-  <table class="table mx-5 col-7 table-bordered">
+  <table class="table mx-5 col-7 table-bordered table-background">
     <thead class="thead-light">
       <tr>
         <th>商品名</th>
@@ -34,15 +34,15 @@
   </table>
 
   <table class="table table-bordered col-3">
-    <tr>
+    <tr class="table-background">
       <td style="width: 50%" class="table-active">送料</td>
       <td style="width: 50%">800</td>
     </tr>
-    <tr>
+    <tr class="table-background">
       <td style="width: 50%" class="table-active">商品合計</td>
       <td style="width: 50%"><%= @items_price.to_s(:delimited) %></td>
     </tr>
-    <tr>
+    <tr class="table-background">
       <td style="width: 50%" class="table-active">請求金額</td>
       <td style="width: 50%"><%= @total_payment.to_s(:delimited) %></td>
     </tr>
