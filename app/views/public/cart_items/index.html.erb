@@ -1,7 +1,7 @@
 <div class="row col-11 offset-1 mb-5">
   <h3 class="mini-title">ショッピングカート</h3>
   <%= link_to 'カートを空にする', cart_item_destroy_all_path(current_customer.cart_items),
-                                  method: :delete, class: "btn btn-danger offset-7", data: { confirm: "カートの中身を全て削除しますか？" } %>
+                                  method: :delete, class: "btn btn-danger offset-6", data: { confirm: "カートの中身を全て削除しますか？" } %>
 </div>
 
   <div class="col-9 offset-1">
