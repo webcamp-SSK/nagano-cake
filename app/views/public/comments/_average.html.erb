@@ -1,0 +1,13 @@
+<script>
+  $('#star-rate-<%= item.id %>').empty();
+  $('#star-rate-<%= item.id %>').raty({
+    size: 36,
+    starOff: "<%= asset_path('star-off.png') %>",
+    starOn: "<%= asset_path('star-on.png') %>",
+    starHalf: "<%= asset_path('star-half.png') %>",
+    half: true,
+    readOnly: true,
+    score: "<%= item.comments.average(:rate).to_f.round(1) %>",
+    //平均点を算出し、round関数で切り上げ
+  });
+</script>
