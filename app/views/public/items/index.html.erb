@@ -9,7 +9,7 @@
      </div>
     <div class="row mx-auto">
       <% @items.each do |item| %>
-        <div class="col-3 my-2 mr-1 pt-2 border table-background text-center">
+        <div class="col-3 my-2 mr-2 pt-2 border table-background text-center">
           <%= link_to item_path(item) do %>
             <%= image_tag item.image, size: "210x150" %>
             <p class="card-title text-dark"><%= item.name %></p>

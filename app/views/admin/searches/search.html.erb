@@ -1,20 +1,20 @@
-  <div class="row justify-content-center">
-    <h2>『<%= @content %>』検索結果</h2>
-  </div>
+  <div>
+    <div class="row text-center col-6 my-3 ml-3 ">
+      <h3 class="mini-title">『<%= @content %>』検索結果</h3>
+    </div>
     <% if @records.exists? %>
-      <div class="row">
-        <div class="col-12">
-          <div class="d-flex align-items-center justify-content-around flex-wrap mb-5">
-            <% @records.each do |item| %>
-              <%= link_to item_path(item) do %>
-                <%= image_tag item.image, size: "200x200", class: "text-decoration-none" %>
-                <p class="mt-2 text-center" style="color: #C5956B;"><%= item.name %></p>
-                <p class="text-center">￥<%= item.price.to_s(:delimited) %></p>
-              <% end %>
+      <div class="row ml-5">
+        <% @records.each do |item| %>
+          <div class="col-2 my-3 mr-2 pt-2 border table-background text-center">
+            <%= link_to item_path(item) do %>
+              <%= image_tag item.image, size: "210x150", class: "pr-1 mb-2" %>
+              <p class="card-title text-dark"><%= item.name %></p>
             <% end %>
+            <p>￥<%= item.price.to_s(:delimited) %></p>
           </div>
-        </div>
+        <% end %>
       </div>
     <% else %>
       <div class="text-center h2">一致する検索結果がありません</div>
     <% end %>
+  </div>

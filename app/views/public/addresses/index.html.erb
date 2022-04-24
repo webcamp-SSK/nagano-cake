@@ -1,8 +1,8 @@
-<div class="px-5 mx-5">
-  <h3 class="mb-5 mini-title">配達先登録 ／ 一覧</h3>
+<div class="px-5 mx-5 mb-5">
+  <h3 class="mini-title">配達先登録 ／ 一覧</h3>
+  <div id="error" class="ml-2"><%= render 'layouts/errors', obj: @address %></div>
 </div>
 <div class="col-11 offset-1 mb-5">
-  <div id="error"><%= render 'layouts/errors', obj: @address %></div>
   <div id="address_form">
     <%= render 'public/addresses/address_form', address: @address %>
   </div>

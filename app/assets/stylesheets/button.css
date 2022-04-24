@@ -1,0 +1,38 @@
+input.btn-success, a.btn-success {
+  border: 2px solid #FF69A3;
+  background: #FF69A3;
+  border-radius: 50vh;
+  color: #fff;
+}
+
+input.btn-success:hover, a.btn-success:hover {
+  border: 2px solid #FF5192 !important;
+  color: #fff !important;
+  background: #FF5192 !important;
+}
+
+input.btn-primary, a.btn-primary {
+  border: 2px solid #FF773E;
+  background: #FF773E;
+  border-radius: 50vh;
+  color: #fff;
+}
+
+input.btn-primary:hover, a.btn-primary:hover {
+  border: 2px solid #FF6928 !important;
+  color: #fff !important;
+  background: #FF6928 !important;
+}
+
+button.btn-outline-success {
+  border: 2px solid #A16EFF;
+  background: #A16EFF;
+  border-radius: 50vh;
+  color: #fff;
+}
+
+button.btn-outline-success:hover {
+  border: 2px solid #9057FF !important;
+  color: #fff !important;
+  background: #9057FF !important;
+}
