@@ -1,27 +1,18 @@
-  <div class="row justify-content-center">
-    <h2>『<%= @content %>』　検索結果</h2>
+  <div class="row text-center col-6 my-3 ml-3">
+    <h3 class="mini-title">『<%= @content %>』検索結果</h3>
   </div>
   <% if @records.exists? %>
-    <div class="row mt-3">
-      <div class="col-12">
-        <div class="d-flex align-items-center justify-content-center flex-wrap m-2">
-          <% @records.each do |item| %>
-            <%= link_to item_path(item) do %>
-              <div class="mx-3">
-                <%= image_tag item.image, size: "150x150", class: "text-decoration-none" %>
-                <p class="mt-2 text-center" style="color: black;"><%= item.name %></p>
-                <p class="text-center">￥<%= item.price.to_s(:delimited) %></p>
-              </div>
-            <% end %>
+    <div class="row ml-5">
+      <% @records.each do |item| %>
+        <div class="col-2 my-3 mr-2 pt-2 border table-background text-center">
+          <%= link_to item_path(item) do %>
+            <%= image_tag item.image, size: "210x150", class: "pr-1 mb-2" %>
+            <p class="card-title text-dark"><%= item.name %></p>
           <% end %>
+          <p>￥<%= item.price.to_s(:delimited) %></p>
         </div>
-      </div>
-    </div>
-    <div class="d-flex justify-content-center">
-      <div>
-        <%= paginate @records %>
-      </div>
+      <% end %>
     </div>
   <% else %>
-    <div class="text-center h2">一致する検索結果がありません</div>
+    <div class="h2 row text-center col-6 mt-5 ml-3">一致する検索結果がありません</div>
   <% end %>

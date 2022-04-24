@@ -8,7 +8,7 @@ input.btn-success, a.btn-success {
 input.btn-success:hover, a.btn-success:hover {
   border: 2px solid #FF5192 !important;
   color: #fff !important;
-  background: #FF5192;
+  background: #FF5192 !important;
 }
 
 input.btn-primary, a.btn-primary {
@@ -22,4 +22,17 @@ input.btn-primary:hover, a.btn-primary:hover {
   border: 2px solid #FF6928 !important;
   color: #fff !important;
   background: #FF6928 !important;
+}
+
+button.btn-outline-success {
+  border: 2px solid #A16EFF;
+  background: #A16EFF;
+  border-radius: 50vh;
+  color: #fff;
+}
+
+button.btn-outline-success:hover {
+  border: 2px solid #9057FF !important;
+  color: #fff !important;
+  background: #9057FF !important;
 }
