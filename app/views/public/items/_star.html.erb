@@ -1,0 +1,21 @@
+<%= link_to(item_comments_path(item), class:"text-decoration-none") do %>
+  <span id="star-rate-<%= item.id %>"></span>
+  <% if @item.comments.count == 0 %>
+    <span class="text-secondary">レビューなし</span>
+  <% else %>
+    <span class="text-dark">（<%= item.comments.count %>）</span>
+  <% end %>
+<% end %>
+
+<script>
+  $('#star-rate-<%= item.id %>').empty();
+  $('#star-rate-<%= item.id %>').raty({
+    size: 20,
+    starOff: "<%= asset_path('star-off.png') %>",
+    starOn: "<%= asset_path('star-on.png') %>",
+    starHalf: "<%= asset_path('star-half.png') %>",
+    half: true,
+    readOnly: true,
+    score: "<%= item.comments.average(:rate).to_f.round(1) %>",
+  });
+</script>
