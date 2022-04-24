@@ -10,9 +10,10 @@
         </div>
       </div>
       <div class="col-6 mt-4>">
-        <div class="mb-5">
-          <h3><%= @item.name %></h3>
-          <%= @item.introduction %>
+        <h3><%= @item.name %></h3>
+        <%= @item.introduction %><br>
+        <div class="py-2">
+          <%= render "star", item: @item %>
         </div>
         <p><span class="font-weight-bold">￥<%= @item.with_tax_price.to_s(:delimited)  %></span><span class="small">(税込)</span></p>
         <% if customer_signed_in? %>
