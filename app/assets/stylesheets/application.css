@@ -15,6 +15,7 @@
  */
 
 @import "skippr";
+@import "button";
 
 .field_with_errors {
  display: contents;
