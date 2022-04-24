@@ -17,6 +17,7 @@ class Public::CommentsController < ApplicationController
       flash[:notice] = "クチコミを投稿しました"
       redirect_to request.referer
     else
+      @comments = @item.comments.page(params[:page]).per(3)
       render "index"
     end
   end

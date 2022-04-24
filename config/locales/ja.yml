@@ -33,7 +33,7 @@ ja:
         postal_code: "郵便番号"
         address: "住所"
         telephone_number: "電話番号"
-  
+
       item:
         name: "商品名"
         introduction: "商品説明"
@@ -41,11 +41,16 @@ ja:
         genre_id: "ジャンル"
         genre: "ジャンル"
         image: "商品画像"
-  
+
       genre:
         name: "ジャンル名"
-  
+
       address:
         postal_code: "郵便番号"
         address: "住所"
         name: "宛名"
+
+      comment:
+        comment: "クチコミ"
+        nick_name: "ニックネーム"
+        rate: "評価"
