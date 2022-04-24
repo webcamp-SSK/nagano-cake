@@ -3,7 +3,7 @@
 </div>
 <div class="col-11">
   <div class="d-flex justify-content-end mb-4">
-    <%= form_tag(admin_root_path, method: :get) do %> 
+    <%= form_tag(admin_root_path, method: :get) do %>
       <%= select_tag :status, options_for_select({ "一覧" => "ichiran", "入金待ち" => "waiting", "入金確認" => "confirm", "製作中" => "production", "発送準備中" => "preparation", "発送完了" => "sent" }) %> 
       <%= submit_tag '検索する', class: "btn btn-info" %> 
     <% end %>
@@ -12,7 +12,7 @@
 
 <div class="px-5">
   <div class="row mx-5">
-    <table class="table mx-5 table border-bottom table-hover">
+    <table class="table mx-5 table border-bottom table-hover table-background">
       <thead class="thead-light">
         <tr>
           <th style="width: 25%">購入日時</th>

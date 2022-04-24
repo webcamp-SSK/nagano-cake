@@ -1,4 +1,4 @@
-<table class="table mx-5 table-bordered">
+<table class="table mx-5 table-bordered table-background">
   <thead class="thead-light">
     <tr>
       <th class="col-4">商品名</th>
@@ -12,7 +12,7 @@
     <% cart_items.each do |cart_item| %>
       <tr>
         <td class="col-2">
-          <%= image_tag cart_item.item.image, size: '50x50' %>
+          <%= image_tag cart_item.item.image, size: '70x50' %>
           <%= cart_item.item.name %>
         </td>
         <td>
