@@ -3,12 +3,10 @@ class Public::CommentsController < ApplicationController
 
   def index
     @item = Item.find(params[:item_id])
+    @comments = @item.comments.page(params[:page]).per(3)
     if customer_signed_in?
       @comment = current_customer.comments.new
     end
-    # @comments = @item.comments
-
-
   end
 
   def create
@@ -16,6 +14,7 @@ class Public::CommentsController < ApplicationController
     @comment = current_customer.comments.new(comment_params)
     @comment.item_id = @item.id
     if @comment.save
+      flash[:notice] = "クチコミを投稿しました"
       redirect_to request.referer
     else
       render "index"
