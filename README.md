@@ -1,6 +1,7 @@
 # ながのケーキ
 
 長野県にある洋菓子店「ながのCAKE」の商品を通販するためのECサイト開発。
+
 SNSでバズり、全国から問い合わせが殺到したことが経緯。
 
 ## 制作期間
@@ -58,3 +59,4 @@ faker
 jquery-rails
 enum_help
 pry-byebug
+devise-i18n
