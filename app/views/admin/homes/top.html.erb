@@ -4,8 +4,8 @@
 <div class="col-11">
   <div class="d-flex justify-content-end mb-4">
     <%= form_tag(admin_root_path, method: :get) do %>
-      <%= select_tag :status, options_for_select({ "一覧" => "ichiran", "入金待ち" => "waiting", "入金確認" => "confirm", "製作中" => "production", "発送準備中" => "preparation", "発送完了" => "sent" }) %> 
-      <%= submit_tag '検索する', class: "btn btn-info" %> 
+      <%= select_tag :status, options_for_select({ "一覧" => "ichiran", "入金待ち" => "waiting", "入金確認" => "confirm", "製作中" => "production", "発送準備中" => "preparation", "発送完了" => "sent" }) %>
+      <%= submit_tag '検索する', class: "btn btn-info" %>
     <% end %>
   </div>
 </div>
