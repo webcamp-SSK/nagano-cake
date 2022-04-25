@@ -1,24 +1,60 @@
-# README
+# ながのケーキ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+長野県にある洋菓子店「ながのCAKE」の商品を通販するためのECサイト開発。<br>
+SNSでバズり、全国から問い合わせが殺到したことが経緯。<br>
 
-Things you may want to cover:
+## 制作期間
+2022/4/13~4/25
 
-* Ruby version
+## 制作メンバー
+* ちこ
+* しげちゃん
+* KT
 
-* System dependencies
+## 機能一覧
+* 会員側
+	* ログイン機能
+	* ログアウト機能
+	* 商品一覧表示機能
+	* 商品詳細情報表示機能
+	* カート追加機能
+	* カート一覧機能
+	* 注文機能
+	* 退会機能
+	* 配送先追加・編集機能
+	* 注文履歴一覧表示機能
+	* 注文履歴詳細表示機能
+	* 商品検索
+	* ジャンル検索機能
+	* 商品レビュー機能
 
-* Configuration
+* 管理者側
+	* 会員情報編集機能
+	* 退会機能
+	* 注文履歴一覧表示機能
+	* 注文履歴個人一覧表示機能
+	* 注文履歴詳細表示機能
+	* 配送ステータス絞り込み機能
+	* ログイン機能
+	* ログアウト機能
+	* 顧客一覧表示機能
+	* 顧客詳細情報表示機能
+	* 商品一覧表示機能
+	* 商品詳細情報表示機能
+	* 商品情報変更機能
+	* ジャンル設定機能
 
-* Database creation
+## 開発環境
+IDE:AWS cloud9<br>
+使用言語：Ruby(2.6.3)・HTML・CSS・Javascript<br>
+フレームワーク: Ruby on Rails(6.1.5)<br>
+JSライブラリ: jQuery<br>
+データベース:sqlite3 1.4<br>
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Gem
+devise<br>
+kaminari<br>
+faker<br>
+enum_help<br>
+pry-byebug<br>
+devise-i18n<br>
