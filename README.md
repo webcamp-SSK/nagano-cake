@@ -55,7 +55,6 @@ JSライブラリ: jQuery<br>
 devise<br>
 kaminari<br>
 faker<br>
-jquery-rails<br>
 enum_help<br>
 pry-byebug<br>
 devise-i18n<br>
