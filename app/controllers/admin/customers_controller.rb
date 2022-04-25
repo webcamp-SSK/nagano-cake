@@ -26,12 +26,12 @@ class Admin::CustomersController < ApplicationController
   def order_index
     @customer = Customer.find(params[:customer_id])
     if params[:status] == "ichiran"
-      @orders = Order.all.page(params[:page]).per(10)
+      @orders = @customers.orders.page(params[:page]).per(10)
     elsif params[:status]
-      @order_statuses = Order.where(status: params[:status])
+      @order_statuses = @customer.orders.where(status: params[:status])
       @orders = @order_statuses.page(params[:page]).per(10)
     else
-      @orders = Order.all.page(params[:page]).per(10)
+      @orders = @customer.orders.page(params[:page]).per(10)
     end
   end
 
