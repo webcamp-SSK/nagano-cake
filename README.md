@@ -58,4 +58,3 @@ faker
 jquery-rails
 enum_help
 pry-byebug
-devise-i18n
